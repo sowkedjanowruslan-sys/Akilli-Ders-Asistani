@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    =========================================================================================
+    PROJECT: AKILLI DERS ASISTANI - FOCUS MATRIX PRO
+    COMPONENT: LEVEL SELECTION [PURE PREMIUM EDITION]
+    =========================================================================================
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBFBFD">
+
+    <!-- LAYER 0: SHARED AMBIENT LIGHTING (Arka Plan Işıkları) -->
+    <include layout="@layout/ambient_background_layers" />
+
+    <!-- LAYER 1: DYNAMIC HEADER -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false">
+
+            <!-- BIG TITLE (Kaybolan Başlık) -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_collapseMode="parallax">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentBottom="true"
+                    android:paddingHorizontal="32dp"
+                    android:paddingBottom="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BEYİN EGZERSİZİ"
+                        android:textColor="#5856D6"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="0.15" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Focus Matrix"
+                        android:textColor="#1C1C1E"
+                        android:textSize="34sp"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="-0.04" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- STICKY TOOLBAR (Sabitlenen Üst Bar) -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarFocus"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="16dp">
+
+                    <ImageButton
+                        android:id="@+id/btnBackFromFocus"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@android:drawable/ic_menu_revert"
+                        app:tint="#1C1C1E" />
+
+                    <!-- Toolbar Başlığı (Sadece kaydırınca belirir) -->
+                    <TextView
+                        android:id="@+id/txtToolbarTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Sıralama &amp; Seviyeler"
+                        android:textColor="#1C1C1E"
+                        android:textSize="17sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:visibility="gone"/>
+
+                    <ImageButton
+                        android:id="@+id/btnOpenFocusLeaderboard"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@android:drawable/btn_star_big_on"
+                        app:tint="#FFD60A" />
+
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- LAYER 2: LEVEL LIST (Gereken asıl içerik) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFocusLevels"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/item_math_level"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="3" />
+
+    <!-- LAYER 3: QUICK ACTION -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/btnQuickStartFocus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="32dp"
+        android:text="Egzersize Başla"
+        android:textColor="#FFFFFF"
+        app:icon="@android:drawable/ic_media_play"
+        app:iconTint="#FFFFFF"
+        app:backgroundTint="#5856D6"
+        app:elevation="12dp"
+        android:fontFamily="sans-serif-black" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
