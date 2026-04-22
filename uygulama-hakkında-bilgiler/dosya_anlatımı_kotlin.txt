@@ -1,4 +1,5 @@
-🎮 1. OYUN VE BİLİŞSEL GELİŞİM MOTORLARI•MathPlayActivity.kt: Oyunun "Beyni"dir. 550+ satırlık bu motor; karmaşık işaretli sorular üretir, zaman cezalarını hesaplar ve puanlama sistemini yönetir.
+🎮 1. OYUN VE BİLİŞSEL GELİŞİM MOTORLARI
+•MathPlayActivity.kt: Oyunun "Beyni"dir. 550+ satırlık bu motor; karmaşık işaretli sorular üretir, zaman cezalarını hesaplar ve puanlama sistemini yönetir.
 •FocusMatrixActivity.kt: Görsel hafıza ve dikkat oyununun motorudur. Seviyeye göre ızgara (grid) boyutunu ayarlar ve parlayan karoların hafıza algoritmasını çalıştırır.
 •MathGameActivity.kt: Matematik oyunu için premium seviye seçim ekranıdır.
 •MathLeaderboardActivity.kt: Firebase'den dünya genelindeki skorları çekerek öğrencileri sıralayan liderlik tablosudur.
