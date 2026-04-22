@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StudentActivity">
+
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBFBFD"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    tools:context=".StudentActivity">
+
+    <!-- LAYER 0: IOS AMBIENT BACKGROUND SYSTEM -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Üst Sağ Safir Parıltı -->
+        <View
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="-200dp"
+            android:layout_marginEnd="-150dp"
+            android:alpha="0.25"
+            android:background="@drawable/bg_ios_ambient_glow"
+            android:backgroundTint="#4F46E5" />
+
+        <!-- Sol Alt Zümrüt Parıltı -->
+        <View
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_gravity="bottom|start"
+            android:layout_marginBottom="-100dp"
+            android:layout_marginStart="-120dp"
+            android:alpha="0.15"
+            android:background="@drawable/bg_ios_ambient_glow"
+            android:backgroundTint="#10B981" />
+    </FrameLayout>
+
+    <!-- LAYER 1: DYNAMIC COLLAPSING HEADER (APPLE STYLE) -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false">
+
+            <!-- HEADER CONTENT: USER ORCHESTRATOR -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_collapseMode="parallax">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="70dp"
+                    android:paddingHorizontal="24dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!-- IOS SQUIRCLE AVATAR -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAvatar"
+                            android:layout_width="74dp"
+                            android:layout_height="74dp"
+                            app:cardCornerRadius="26dp"
+                            app:cardElevation="14dp"
+                            app:strokeWidth="3dp"
+                            app:strokeColor="#FFFFFF">
+
+                            <ImageView
+                                android:id="@+id/imgAvatar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@android:drawable/ic_menu_camera"
+                                android:background="#F2F2F7"/>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/cardAvatar"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="18dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Hoş Geldin ✨"
+                                android:textColor="#64748B"
+                                android:textSize="14sp"
+                                android:fontFamily="sans-serif-medium" />
+
+                            <TextView
+                                android:id="@+id/txtStudentName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Öğrenci Adı"
+                                android:textColor="#1C1C1E"
+                                android:textSize="22sp"
+                                android:fontFamily="sans-serif-black"
+                                android:letterSpacing="-0.02" />
+                            <TextView
+                                android:id="@+id/txtStudentDetail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bölüm | No: ---"
+                                android:textColor="#64748B"
+                                android:textSize="13sp"
+                                android:fontFamily="sans-serif-medium"
+                                android:layout_marginTop="2dp" />
+                        </LinearLayout>
+
+                        <!-- IOS TOGGLE GROUP (Glass Effects) -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical"
+                            android:gravity="end">
+
+                            <com.google.android.material.switchmaterial.SwitchMaterial
+                                android:id="@+id/switchAnon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:text="Gizli"
+                                android:textColor="#1C1C1E"
+                                android:textSize="11sp"
+                                android:fontFamily="sans-serif-bold"
+                                app:thumbTint="#FFFFFF"
+                                app:trackTint="#007AFF" />
+
+                            <com.google.android.material.switchmaterial.SwitchMaterial
+                                android:id="@+id/switchSound"
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:text="Ses"
+                                android:textColor="#1C1C1E"
+                                android:textSize="11sp"
+                                android:fontFamily="sans-serif-bold"
+                                app:thumbTint="#FFFFFF"
+                                app:trackTint="#34C759"
+                                android:checked="true" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <!-- DYNAMIC ISLAND STATUS BAR (Simulated) -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="24dp"
+                        app:cardCornerRadius="22dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="#0A000000"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#1A000000">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="16dp">
+
+                            <View
+                                android:id="@+id/viewLiveStatus"
+                                android:layout_width="8dp"
+                                android:layout_height="8dp"
+                                android:background="@drawable/bg_status_live_pulse" />
+
+                            <TextView
+                                android:id="@+id/txtConnectionStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:text="BAĞLANTI BEKLENİYOR"
+                                android:textColor="#1C1C1E"
+                                android:textSize="11sp"
+                                android:fontFamily="sans-serif-black"
+                                android:letterSpacing="0.05" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- IOS BLUR TOOLBAR -->
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bağlantı Paneli"
+                        android:textColor="#1C1C1E"
+                        android:textSize="17sp"
+                        android:fontFamily="sans-serif-bold" />
+
+                    <!-- MENÜ İKONU ŞİMDİ BURADA GÖRÜNECEK -->
+                    <ImageButton
+                        android:id="@+id/btnOpenMenu"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@android:drawable/ic_menu_sort_by_size"
+                        app:tint="#1C1C1E" />
+
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- LAYER 2: SCROLLABLE BENTO CONTENT -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="120dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp">
+
+            <!-- SECTION 1: CONNECT BOX (Apple Bento Design) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="32dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E5E5EA">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ders Kodu"
+                        android:textColor="#8E8E93"
+                        android:textSize="13sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="16dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxBackgroundMode="none"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:background="@drawable/bg_ios_input_field"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:hint="A1B2C3D4"
+                            android:inputType="textCapCharacters"
+                            android:letterSpacing="0.3"
+                            android:maxLength="8"
+                            android:textColor="#1C1C1E"
+                            android:textSize="26sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnJoin"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
+                        android:backgroundTint="#007AFF"
+                        android:text="Derse Katıl"
+                        android:textAllCaps="false"
+                        android:textSize="17sp"
+                        android:fontFamily="sans-serif-bold"
+                        app:cornerRadius="18dp"
+                        app:elevation="8dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SECTION 2: FEEDBACK ORCHESTRATOR -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="12dp"
+                android:text="ANLIK DURUM BİLDİR"
+                android:textColor="#8E8E93"
+                android:textSize="12sp"
+                android:letterSpacing="0.08"
+                android:fontFamily="sans-serif-bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/layoutFeedbackButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="32dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E5E5EA"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- UNDERSTOOD (Apple Green) -->
+                    <RelativeLayout
+                        android:id="@+id/btnUnderstood"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:paddingHorizontal="24dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Her Şeyi Anladım"
+                            android:textColor="#34C759"
+                            android:textSize="17sp"
+                            android:fontFamily="sans-serif-bold" />
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:src="@android:drawable/checkbox_on_background"
+                            app:tint="#34C759" />
+                    </RelativeLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="0.5dp" android:background="#F2F2F7" android:layout_marginHorizontal="20dp" />
+
+                    <!-- REPEAT (Apple Orange) -->
+                    <RelativeLayout
+                        android:id="@+id/btnRepeat"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:paddingHorizontal="24dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Tekrar Eder misiniz?"
+                            android:textColor="#FF9500"
+                            android:textSize="17sp"
+                            android:fontFamily="sans-serif-bold" />
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:src="@android:drawable/ic_popup_sync"
+                            app:tint="#FF9500" />
+                    </RelativeLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="0.5dp" android:background="#F2F2F7" android:layout_marginHorizontal="20dp" />
+
+                    <!-- NOT UNDERSTOOD (Apple Red) -->
+                    <RelativeLayout
+                        android:id="@+id/btnNotUnderstood"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:paddingHorizontal="24dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Anlamadım"
+                            android:textColor="#FF3B30"
+                            android:textSize="17sp"
+                            android:fontFamily="sans-serif-bold" />
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:src="@android:drawable/ic_delete"
+                            app:tint="#FF3B30" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <!-- SECTION 2.5: LIVE INTELLIGENCE (ALTYAZI VE PDF SİSTEMİ) --><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="12dp"
+            android:text="CANLI DERS ASİSTANI"
+            android:textColor="#8E8E93"
+            android:textSize="12sp"
+            android:letterSpacing="0.08"
+            android:fontFamily="sans-serif-bold" />
+
+            <!-- ALTYAZI KARTI (Buzlu Cam Efekti) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSubtitles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#1A007AFF"
+                app:cardBackgroundColor="#0D007AFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Canlı İkon (Kırmızı Nokta) -->
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:background="@drawable/bg_status_live_pulse"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:id="@+id/txtLiveSubtitles"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Hoca konuşuyor..."
+                        android:textColor="#1C1C1E"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:lineSpacingExtra="4dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- PDF İNDİRME BUTONU (Premium IOS Stil) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDownloadLesson"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="16dp"
+                android:text="Ders Dosyasını PDF İndir"
+                android:textAllCaps="false"
+                android:textColor="#007AFF"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-bold"
+                app:cornerRadius="20dp"
+                app:icon="@android:drawable/stat_sys_download"
+                app:iconTint="#007AFF"
+                app:iconPadding="12dp"
+                app:iconGravity="textStart"
+                app:backgroundTint="#F2F2F7"
+                app:strokeColor="#D1D1D6"
+                app:strokeWidth="1dp"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnViewProjects"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                android:text="📋 Ders Projeleri"
+                android:textColor="#4F46E5"
+                app:icon="@drawable/ic_sync_ios"
+                app:iconTint="#4F46E5"
+                app:backgroundTint="#EEF2FF"
+                app:cornerRadius="18dp"
+                android:visibility="gone"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-bold" />
+
+
+            <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAiNote"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:text="🤖 AI Akıllı Ders Özeti Hazırla"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-bold"
+            app:cornerRadius="20dp"
+            app:backgroundTint="#5856D6"
+            app:elevation="8dp"
+            app:icon="@android:drawable/ic_menu_agenda"
+            app:iconTint="#FFFFFF"
+            app:iconPadding="12dp"
+            app:iconGravity="textStart" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStartRecord"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="16dp"
+                android:text="Ses Kaydını Başlat"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-bold"
+                app:icon="@android:drawable/ic_btn_speak_now"
+                app:iconTint="#FFFFFF"
+                app:iconGravity="textStart"
+                app:cornerRadius="20dp"
+                android:backgroundTint="#FF9500"
+                app:elevation="4dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEmergency"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="32dp"
+                android:text="Acil Durum Bildir"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-black"
+                app:cornerRadius="20dp"
+                android:backgroundTint="#1C1C1E"
+                app:elevation="4dp"
+                app:icon="@android:drawable/ic_dialog_alert"
+                app:iconTint="#FF3B30"
+                app:iconGravity="textStart" />
+
+            <!-- SUBTITLES (Premium Hidden Feature) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOpenSubtitles"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:text="Canlı Altyazıyı Aç"
+                android:textAllCaps="false"
+                android:textColor="#007AFF"
+                android:fontFamily="sans-serif-medium"
+                app:strokeColor="#007AFF"
+                app:cornerRadius="18dp"
+                android:visibility="gone" />
+
+            <!-- VERSION INFO -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Designed by Apple in California\nSmart Class Connect v5.4.0 Pro"
+                android:textColor="#C7C7CC"
+                android:textSize="11sp"
+                android:gravity="center"
+                android:lineSpacingExtra="4dp"
+                android:fontFamily="sans-serif-medium" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- FAB: DETAIL ORCHESTRATOR -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/btnDetailReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="24dp"
+        android:text="Detay Ekle"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#007AFF"
+        android:fontFamily="sans-serif-bold"
+        app:icon="@android:drawable/ic_menu_edit"
+        app:iconTint="#FFFFFF"
+        app:elevation="12dp" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <!-- SAĞDAN AÇILAN PANEL -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="#FFFFFF"
+        app:elevation="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MENÜ"
+                android:textColor="#8E8E93"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-bold"
+                android:letterSpacing="0.1" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F2F2F7"
+                android:layout_marginVertical="16dp" />
+
+            <!-- MATEMATİK OYUNU BUTONU -->
+            <LinearLayout
+                android:id="@+id/btnOpenMathGame"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_ios_input_field"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔢 Matematik Oyunu"
+                    android:textColor="#1C1C1E"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-medium" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/btnOpenFocusGame"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_ios_input_field"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🧠 Focus Matrix (Hafıza)"
+                    android:textColor="#1C1C1E"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-medium" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="32dp"
+    android:layout_margin="16dp"
+    app:cardElevation="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🚀 Proje Hazırlama Modülü"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="#1C1C1E"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Öğrenciler için yeni bir görev tanımlayın."
+            android:textSize="12sp"
+            android:textColor="#8E8E93"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Proje Başlığı -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Proje Başlığı"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxCornerRadiusBottomEnd="16dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtProjectTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Detaylar -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Proje Detayları ve Beklentiler"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxCornerRadiusBottomEnd="16dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtProjectDesc"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="top"
+                android:inputType="textMultiLine" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- AI DESTEK BUTONU -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAiGenerateProject"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:text="AI ile Taslak Oluştur"
+            android:textSize="12sp"
+            app:icon="@drawable/ic_ai_sparkles"
+            app:backgroundTint="#F3E5F5"
+            app:iconTint="#6200EE"
+            android:textColor="#6200EE" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressProjectLoading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:indicatorColor="#6200EE" />
+
+        <!-- Teslim Tarihi -->
+        <TextView
+            android:id="@+id/txtDeadline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="📅 Son Teslim: Tarih Seçilmedi"
+            android:textColor="#4F46E5"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancelProject"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="İptal"
+                android:textColor="#8E8E93" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPublishProject"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1.5"
+                android:layout_marginStart="8dp"
+                android:text="Projeyi Yayınla"
+                app:cornerRadius="16dp"
+                android:backgroundTint="#4F46E5" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

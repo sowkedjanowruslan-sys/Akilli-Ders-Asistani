@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    AKILLI DERS ASISTANI - ULTRA PREMIUM STUDENT PROFILE
+    DESIGN SYSTEM: APPLE IPHONE 17 PRO "ETHEREAL"
+    MODULE: STUDENT PERSONALIZATION & ANALYTICS
+    COLOR PALETTE: San Francisco Indigo / Slate / Apple White
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F7"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    tools:context=".StudentProfileActivity">
+
+    <!-- LAYER 0: IOS DYNAMIC BLUR BACKGROUND (Arka Plan Hareketli Işık) -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="450dp"
+            android:layout_height="450dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="-180dp"
+            android:layout_marginEnd="-180dp"
+            android:alpha="0.35"
+            android:background="@drawable/bg_ios_ambient_glow"
+            android:backgroundTint="#5856D6" />
+
+        <View
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_gravity="bottom|start"
+            android:layout_marginBottom="-100dp"
+            android:layout_marginStart="-100dp"
+            android:alpha="0.2"
+            android:background="@drawable/bg_ios_ambient_glow"
+            android:backgroundTint="#34C759" />
+    </FrameLayout>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false">
+
+            <!-- HEADER CONTENT: AVATAR & QUICK INFO -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:paddingTop="80dp"
+                android:paddingBottom="40dp"
+                app:layout_collapseMode="parallax">
+
+                <!-- IOS STYLE AVATAR CONTAINER -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardProfileImageContainer"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:translationZ="12dp"
+                    app:cardCornerRadius="44dp"
+                    app:cardElevation="24dp"
+                    app:strokeWidth="4dp"
+                    app:strokeColor="#FFFFFF">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgStudentPhoto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@android:drawable/ic_menu_camera"
+                            android:background="#E5E5EA" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_gravity="bottom"
+                            android:background="#88000000" />
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:src="@android:drawable/ic_menu_camera"
+                            app:tint="#FFFFFF" />
+                    </FrameLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/txtStudentNameDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:text="Kullanıcı Adı"
+                    android:textColor="#1C1C1E"
+                    android:textSize="28sp"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="-0.03" />
+
+                <TextView
+                    android:id="@+id/txtStudentIdDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Öğrenci No: 0000"
+                    android:textColor="#8E8E93"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.02" />
+
+            </LinearLayout>
+
+            <!-- IOS STYLE TOP TOOLBAR -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp">
+
+                    <ImageButton
+                        android:id="@+id/btnBackProfile"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/bg_ios_round_button"
+                        android:src="@drawable/ic_back_ios"
+                        app:tint="#007AFF" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Profilim"
+                        android:textColor="#1C1C1E"
+                        android:textSize="17sp"
+                        android:fontFamily="sans-serif-bold" />
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- CONTENT SECTION: IOS 17 BENTO GRID SETTINGS -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="100dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp">
+
+            <!-- STATS BENTO SECTION -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:layout_marginBottom="28dp">
+
+                <!-- Lesson Stats Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:strokeWidth="0.5dp"
+                    app:strokeColor="#E5E5EA">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/txtStatLessons"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#5856D6"
+                            android:textSize="24sp"
+                            android:fontFamily="sans-serif-black" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Toplam Ders"
+                            android:textColor="#8E8E93"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Feedback Stats Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:strokeWidth="0.5dp"
+                    app:strokeColor="#E5E5EA">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/txtStatFeedback"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="%0"
+                            android:textColor="#FF9500"
+                            android:textSize="24sp"
+                            android:fontFamily="sans-serif-black" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Geri Bildirim"
+                            android:textColor="#8E8E93"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </GridLayout>
+
+            <!-- GROUP 1: KİMLİK BİLGİLERİ (IOS LIST STYLE) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="HESAP BİLGİLERİ"
+                android:textColor="#6E6E73"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.05" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="28dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0.5dp"
+                app:strokeColor="#E5E5EA"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Name Row -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:paddingHorizontal="16dp">
+                        <TextView
+                            android:id="@+id/lbl1"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Ad Soyad"
+                            android:textColor="#1C1C1E"
+                            android:textSize="17sp" />
+                        <EditText
+                            android:id="@+id/edtStudentName"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_toEndOf="@id/lbl1"
+                            android:background="@android:color/transparent"
+                            android:hint="Gerekli"
+                            android:gravity="end|center_vertical"
+                            android:textColor="#1C1C1E"
+                            android:textColorHint="#C7C7CC"
+                            android:textSize="17sp"
+                            android:inputType="textPersonName" />
+                    </RelativeLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="0.5dp" android:background="#F2F2F7" android:layout_marginStart="16dp"/>
+
+                    <!-- ID Row -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:paddingHorizontal="16dp">
+                        <TextView
+                            android:id="@+id/lbl2"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Öğrenci No"
+                            android:textColor="#1C1C1E"
+                            android:textSize="17sp" />
+                        <EditText
+                            android:id="@+id/edtStudentNo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_toEndOf="@id/lbl2"
+                            android:background="@android:color/transparent"
+                            android:hint="Gerekli"
+                            android:gravity="end|center_vertical"
+                            android:textColor="#1C1C1E"
+                            android:textColorHint="#C7C7CC"
+                            android:textSize="17sp"
+                            android:inputType="textVisiblePassword" />
+                    </RelativeLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="0.5dp" android:background="#F2F2F7" android:layout_marginStart="16dp"/>
+
+                    <!-- Department Row -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:paddingHorizontal="16dp">
+                        <TextView
+                            android:id="@+id/lbl3"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Bölüm"
+                            android:textColor="#1C1C1E"
+                            android:textSize="17sp" />
+                        <EditText
+                            android:id="@+id/edtStudentDept"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_toEndOf="@id/lbl3"
+                            android:background="@android:color/transparent"
+                            android:hint="Branşınız"
+                            android:gravity="end|center_vertical"
+                            android:textColor="#1C1C1E"
+                            android:textColorHint="#C7C7CC"
+                            android:textSize="17sp"
+                            android:inputType="text" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="KİŞİSELLEŞTİRME"
+                android:textColor="#6E6E73"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.05" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0.5dp"
+                app:strokeColor="#E5E5EA"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <!-- Bu satıra tıklandığında cinsiyet penceresi açılacak -->
+                <RelativeLayout
+                    android:id="@+id/btnGenderRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:paddingHorizontal="16dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Cinsiyet"
+                        android:textColor="#1C1C1E"
+                        android:textSize="17sp" />
+
+                    <!-- Hata aldığın ID buraya eklendi -->
+                    <TextView
+                        android:id="@+id/txtGenderSelection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="Seçiniz ›"
+                        android:textColor="#8E8E93"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ACTION BUTTONS -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStudentSave"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Değişiklikleri Kaydet"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:fontFamily="sans-serif-bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#007AFF"
+                app:cornerRadius="16dp"
+                app:elevation="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="12dp"
+                android:text="Hesabı Sil"
+                android:textColor="#FF3B30"
+                android:textAllCaps="false"
+                android:textSize="15sp" />
+
+            <!-- FOOTER INFO -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Verileriniz Apple Standartlarında AES-256 ile şifrelenmektedir.\nSmart Class Connect v5.0.1"
+                android:textColor="#C7C7CC"
+                android:textSize="11sp"
+                android:gravity="center"
+                android:lineSpacingExtra="4dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Öğrenci Bazlı Konu Analizi"
+            android:textSize="22sp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="#1C1C1E" />
+
+        <TextView
+            android:id="@+id/txtSelectedLesson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seçili Dosya: Henüz PDF seçilmedi"
+            android:layout_marginTop="8dp"
+            android:textColor="#5856D6"
+            android:fontFamily="sans-serif-medium"/>
+
+        <!-- Analiz Kartları -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="#F2F2F7"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="KRİTİK DURUM ANALİZİ"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#8E8E93"
+                    android:letterSpacing="0.1"/>
+
+                <TextView
+                    android:id="@+id/txtUrgentAction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Lütfen bir ders raporu (PDF) seçerek analizi başlatın."
+                    android:textColor="#D32F2F"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif-medium"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Detaylı Analiz Listesi -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DERS KAZANIMLARI"
+            android:layout_marginTop="24dp"
+            android:textSize="12sp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="#8E8E93"/>
+
+        <LinearLayout
+            android:id="@+id/containerAnalysisDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical">
+            <!-- Dinamik olarak doldurulacak -->
+        </LinearLayout>
+
+        <!-- Hoca Planlama Bölümü -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="#E8EAF6"
+            app:strokeColor="#5856D6"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GELECEK HAFTA PLANI (ÖNERİ)"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#5856D6"/>
+
+                <TextView
+                    android:id="@+id/txtTeacherPlan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Analiz yapıldıktan sonra otomatik plan oluşturulacaktır."
+                    android:textColor="#1C1C1E"
+                    android:lineSpacingExtra="4dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSelectPDFForAnalysis"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:text="PDF Seç ve Analiz Et"
+            app:cornerRadius="12dp"
+            android:backgroundTint="#5856D6"/>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

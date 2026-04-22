@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    AKILLI DERS ASISTANI - GLOBAL LEADERBOARD PRO
+    DESIGN SYSTEM: APPLE iOS 18 "DYNAMIC GLASS"
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBFBFD"
+    android:clipChildren="false">
+
+    <!-- LAYER 0: IOS AMBIENT BACKGROUND SYSTEM (Arka Plan Işıkları) -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            android:layout_gravity="top|start"
+            android:layout_marginTop="-200dp"
+            android:layout_marginStart="-150dp"
+            android:alpha="0.15"
+            android:background="@drawable/bg_ios_ambient_glow"
+            android:backgroundTint="#FFD60A" /> <!-- Altın Sarısı Işıltı -->
+
+        <View
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="-100dp"
+            android:layout_marginEnd="-120dp"
+            android:alpha="0.15"
+            android:background="@drawable/bg_ios_ambient_glow"
+            android:backgroundTint="#007AFF" /> <!-- Safir Mavi Işıltı -->
+    </FrameLayout>
+
+    <!-- LAYER 1: DYNAMIC COLLAPSING HEADER -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLeaderboard"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false"
+            app:contentScrim="#FFFFFF">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_collapseMode="parallax">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentBottom="true"
+                    android:paddingHorizontal="32dp"
+                    android:paddingBottom="32dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ŞAMPİYONLAR"
+                        android:textColor="#8E8E93"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="0.1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Global Sıralama"
+                        android:textColor="#1C1C1E"
+                        android:textSize="34sp"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="-0.04" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sıralama"
+                    android:textColor="#1C1C1E"
+                    android:textSize="17sp"
+                    android:fontFamily="sans-serif-bold"
+                    android:alpha="0"
+                    android:id="@+id/txtToolbarTitle"/>
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- LAYER 2: LIST CONTENT -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvLeaderboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="10dp"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="100dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <!-- LOADING STATE -->
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        app:indicatorColor="#007AFF"
+        app:trackThickness="4dp"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

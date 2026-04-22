@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F7"
+    tools:context=".LessonReportActivity">
+
+    <!-- ARKA PLAN DEKORASYONU (iOS Blob Efekti) -->
+    <View
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="-200dp"
+        android:layout_marginEnd="-150dp"
+        android:alpha="0.4"
+        android:background="@drawable/bg_ios_gradient_blob" />
+
+    <!-- ÜST BAR VE GENİŞ BAŞLIK -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:collapsedTitleTextAppearance="@style/CollapsedTitleStyle"
+            app:expandedTitleMarginBottom="28dp"
+            app:expandedTitleMarginStart="24dp"
+            app:expandedTitleTextAppearance="@style/ExpandedTitleStyle"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:title="Ders Raporları">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:navigationIcon="@drawable/ic_back_ios" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- ANA İÇERİK -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="40dp">
+
+            <!-- ÖZET İSTATİSTİK KARTLARI (Bento Grid Style) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#E5E5EA"
+                    app:cardBackgroundColor="@color/white">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/txtTotalLessonsReport"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#007AFF"
+                            android:textSize="28sp"
+                            android:fontFamily="sans-serif-black"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Arşivlenen Ders"
+                            android:textSize="12sp"
+                            android:textColor="#8E8E93"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#E5E5EA"
+                    app:cardBackgroundColor="@color/white">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/txtAvgUnderstanding"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="%0"
+                            android:textColor="#34C759"
+                            android:textSize="28sp"
+                            android:fontFamily="sans-serif-black"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ort. Anlama"
+                            android:textSize="12sp"
+                            android:textColor="#8E8E93"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GEÇMİŞ DÖKÜMLER"
+                android:textSize="11sp"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="4dp"
+                android:letterSpacing="0.1"
+                android:fontFamily="sans-serif-black"
+                android:textColor="#8E8E93"/>
+
+            <!-- LİSTE ALANI -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E5E5EA">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPastReports"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="400dp"
+                    android:padding="8dp"
+                    android:nestedScrollingEnabled="false" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- BOŞ DURUM GÖRÜNÜMÜ -->
+            <LinearLayout
+                android:id="@+id/layoutEmptyState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_marginTop="60dp">
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/ic_empty_archive"
+                    app:tint="#D1D1D6"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Henüz rapor bulunmuyor"
+                    android:layout_marginTop="16dp"
+                    android:textColor="#8E8E93"
+                    android:fontFamily="sans-serif-medium"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

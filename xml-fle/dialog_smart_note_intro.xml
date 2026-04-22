@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="32dp"
+    android:layout_margin="16dp"
+    app:cardElevation="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_ai_sparkles"
+            app:tint="#6200EE"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Yapay Zeka Akıllı Not Asistanı"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif-black"
+            android:textColor="#1C1C1E"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_marginTop="16dp"
+            android:fadeScrollbars="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📌 Bu Sistem Nedir?"
+                    android:textStyle="bold"
+                    android:textColor="#6200EE"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ders boyunca öğretmeninizin anlattığı her şey arka planda canlı olarak analiz edilir. Bu modül, sıradan bir not defteri değil, dersin dökümünü sizin için işleyen bir zekadır."
+                    android:textSize="13sp"
+                    android:textColor="#48484A"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚙️ Nasıl Çalışır?"
+                    android:textStyle="bold"
+                    android:textColor="#6200EE"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1. Ses Analizi: Hocanızın konuşmaları metne dönüştürülür.\n2. Gemini 2.5 Flash: Yapay zeka bu metni tarayarak kritik bilgileri ayıklar.\n3. Bölümleme: Ders konuları otomatik olarak başlıklara ve özetlere ayrılır.\n4. Kişisel Soru-Cevap: Anlamadığınız kısımları asistana sorarak size özel açıklama alabilirsiniz."
+                    android:textSize="13sp"
+                    android:textColor="#48484A"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💡 Faydaları Nelerdir?"
+                    android:textStyle="bold"
+                    android:textColor="#6200EE"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Odaklanma: Not tutma telaşına girmeden sadece hocayı dinleyebilirsiniz.\n• Sınav Hazırlığı: AI sizin için 'Sınavda Çıkabilir' dediği yerleri turuncu kartta vurgular.\n• Hızlı Tekrar: Dersin 40 dakikasını 2 dakikada okuyabileceğiniz profesyonel bir özete dönüştürür."
+                    android:textSize="13sp"
+                    android:textColor="#48484A"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚠️ Önemli Not"
+                    android:textStyle="bold"
+                    android:textColor="#FF3B30"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Yapay zeka bazen teknik terimlerde hata yapabilir. Lütfen hocanızın dökümanlarını ana kaynak olarak kullanmaya devam edin."
+                    android:textSize="13sp"
+                    android:textColor="#48484A"
+                    android:layout_marginTop="4dp"/>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSmartNoteIntroStart"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:text="Hemen Deneyimle"
+            app:cornerRadius="18dp"
+            android:backgroundTint="#6200EE"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif-bold"/>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

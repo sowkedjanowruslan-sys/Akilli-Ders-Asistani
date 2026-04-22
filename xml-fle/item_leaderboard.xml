@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="#0D000000"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:paddingHorizontal="20dp">
+
+        <!-- Sıralama No -->
+        <TextView
+            android:id="@+id/txtRank"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="1"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="#007AFF"/>
+
+        <!-- İsim ve Seviye -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/txtRank"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Öğrenci Adı"
+                android:textColor="#1C1C1E"
+                android:textSize="17sp"
+                android:fontFamily="sans-serif-bold"/>
+
+            <TextView
+                android:id="@+id/txtLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seviye 12"
+                android:textColor="#8E8E93"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-medium"/>
+        </LinearLayout>
+
+        <!-- Skor -->
+        <TextView
+            android:id="@+id/txtScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="2,450"
+            android:textColor="#34C759"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-black"/>
+
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

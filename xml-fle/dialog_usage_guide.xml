@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ULTRA PREMIUM IOS 17 USAGE GUIDE
+    Features: Dual-Role Tutorial (Teacher/Student), Glassmorphism, Modern Tab System
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:cardCornerRadius="40dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="1.5dp"
+    app:strokeColor="#E5E5EA"
+    android:backgroundTint="#F2F2F7">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- HEADER: IOS STYLE GRABBER & TITLE -->
+        <View
+            android:layout_width="36dp"
+            android:layout_height="5dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:background="#D1D1D6"
+            android:alpha="0.8" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/guideTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sistem Rehberi"
+                    android:textColor="#1C1C1E"
+                    android:textSize="28sp"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="-0.03" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Uygulama nasıl çalışır?"
+                    android:textColor="#8E8E93"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-medium" />
+            </LinearLayout>
+
+            <!-- IOS STYLE SEGMENTED CONTROL (SEKMELER) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                android:backgroundTint="#E3E3E8">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+                    <ImageButton
+                        android:id="@+id/tabTeacher"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_ios_round_button"
+                        android:src="@android:drawable/ic_menu_edit"
+                        app:tint="#007AFF" />
+
+                    <ImageButton
+                        android:id="@+id/tabStudent"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="4dp"
+                        android:background="@android:color/transparent"
+                        android:src="@android:drawable/ic_menu_myplaces"
+                        app:tint="#8E8E93" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+
+        <!-- CONTENT SCROLL AREA -->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingHorizontal="20dp"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- ÖĞRETMEN REHBERİ (DETAYLI) -->
+                <LinearLayout
+                    android:id="@+id/guideContentTeacher"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#E5E5EA"
+                        android:backgroundTint="#FFFFFF"
+                        android:layout_marginBottom="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="20dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1. Oturum Başlatma"
+                                android:textColor="#007AFF"
+                                android:textStyle="bold"
+                                android:textSize="16sp"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Ana ekrandan 'Eğitmen' moduna geçin. Kurum ve bölüm bilgilerini girerek 6 haneli bir ders kodu üretin. Bu kodu öğrencilerle paylaşın."
+                                android:textColor="#3A3A3C"
+                                android:textSize="14sp"
+                                android:lineSpacingExtra="4dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#E5E5EA"
+                        android:backgroundTint="#FFFFFF"
+                        android:layout_marginBottom="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="20dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2. Gerçek Zamanlı Takip"
+                                android:textColor="#007AFF"
+                                android:textStyle="bold"
+                                android:textSize="16sp"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Ders sırasında öğrencilerden gelen 'Anlamadım' veya 'Tekrar Et' bildirimlerini anlık olarak panelinizde göreceksiniz. Sayılar tekil öğrencileri temsil eder."
+                                android:textColor="#3A3A3C"
+                                android:textSize="14sp"
+                                android:lineSpacingExtra="4dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <!-- ÖĞRENCİ REHBERİ (DETAYLI) -->
+                <LinearLayout
+                    android:id="@+id/guideContentStudent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#E5E5EA"
+                        android:backgroundTint="#FFFFFF"
+                        android:layout_marginBottom="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="20dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1. Derse Katılım"
+                                android:textColor="#34C759"
+                                android:textStyle="bold"
+                                android:textSize="16sp"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Öğretmeninizin verdiği 6 haneli kodu girerek derse anonim olarak katılın. Hiçbir kişisel veriniz paylaşılmaz."
+                                android:textColor="#3A3A3C"
+                                android:textSize="14sp"
+                                android:lineSpacingExtra="4dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- FOOTER: ACTIONS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGuideFinish"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="Anladım ve Başla"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:cornerRadius="20dp"
+                android:backgroundTint="#007AFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:text="Rehberi okumadan geçmek önerilmez."
+                android:textColor="#FF3B30"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-medium" />
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

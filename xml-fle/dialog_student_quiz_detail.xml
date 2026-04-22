@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="32dp"
+    android:layout_margin="16dp"
+    app:cardElevation="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgDetailStudent"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_student_male"
+            app:shapeAppearanceOverlay="@style/CircleImage"
+            android:scaleType="centerCrop"
+            app:strokeWidth="3dp"
+            app:strokeColor="#4F46E5"/>
+
+        <TextView
+            android:id="@+id/txtDetailName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Öğrenci Adı"
+            android:textSize="22sp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="#1C1C1E"/>
+
+        <TextView
+            android:id="@+id/txtDetailScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Puan: 0"
+            android:textSize="18sp"
+            android:textColor="#34C759"
+            android:fontFamily="sans-serif-bold"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E5E5EA"
+            android:layout_marginVertical="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ÖĞRENCİ SEÇİMLERİ"
+            android:textSize="11sp"
+            android:textColor="#8E8E93"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.1"/>
+
+        <TextView
+            android:id="@+id/txtDetailAnswers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Yükleniyor..."
+            android:textColor="#1C1C1E"
+            android:textSize="15sp"
+            android:lineSpacingExtra="4dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCloseDetail"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:text="Kapat"
+            app:cornerRadius="16dp"
+            android:backgroundTint="#F2F2F7"
+            android:textColor="#1C1C1E"
+            app:elevation="0dp"/>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

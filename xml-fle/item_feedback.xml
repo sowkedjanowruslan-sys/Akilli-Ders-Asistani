@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="32dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="#E5E5EA"
+    android:backgroundTint="#FFFFFF"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <!-- 1. SOL: AVATAR VE DURUM (IPHONE STYLE) -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/avatarGroup"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/avatarCard"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#FFFFFF"
+                app:strokeWidth="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imgStudentAvatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#F2F2F7"
+                    android:scaleType="centerCrop"
+                    android:src="@android:drawable/ic_menu_camera"
+                    tools:ignore="ContentDescription" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Aktiflik Işığı (Glow Effect) -->
+            <View
+                android:id="@+id/viewStatusBadge"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/bg_status_online"
+                android:elevation="4dp"
+                app:layout_constraintBottom_toBottomOf="@id/avatarCard"
+                app:layout_constraintEnd_toEndOf="@id/avatarCard" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 2. ORTA: ÖĞRENCİ BİLGİLERİ -->
+        <LinearLayout
+            android:id="@+id/infoLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/feedbackChip"
+            app:layout_constraintStart_toEndOf="@id/avatarGroup"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/statsBento">
+
+            <TextView
+                android:id="@+id/txtStudentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="-0.02"
+                android:text="Ahmet Yılmaz"
+                android:textColor="#1C1C1E"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/txtStudentDept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Bilgisayar Müh. | No: 442"
+                android:textColor="#8E8E93"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- 3. ALT: BENTO STATS (APPLE STYLE SAYAÇLAR) -->
+        <LinearLayout
+            android:id="@+id/statsBento"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/infoLayout"
+            app:layout_constraintTop_toBottomOf="@id/infoLayout">
+
+            <!-- Understood Pill -->
+            <TextView
+                android:id="@+id/txtUnderstoodCount"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_ios_round_button"
+                android:backgroundTint="#E8F5E9"
+                android:gravity="center"
+                android:paddingHorizontal="10dp"
+                android:text="12 OK"
+                android:textColor="#34C759"
+                android:textSize="11sp"
+                android:fontFamily="sans-serif-black" />
+
+            <!-- Repeat Pill -->
+            <TextView
+                android:id="@+id/txtRepeatCount"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_ios_round_button"
+                android:backgroundTint="#FFF3E0"
+                android:gravity="center"
+                android:paddingHorizontal="10dp"
+                android:text="3 RPT"
+                android:textColor="#FF9500"
+                android:textSize="11sp"
+                android:fontFamily="sans-serif-black" />
+
+            <!-- Not Understood Pill -->
+            <TextView
+                android:id="@+id/txtNotUnderstoodCount"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_ios_round_button"
+                android:backgroundTint="#FFEBEE"
+                android:gravity="center"
+                android:paddingHorizontal="10dp"
+                android:text="1 NO"
+                android:textColor="#FF3B30"
+                android:textSize="11sp"
+                android:fontFamily="sans-serif-black" />
+        </LinearLayout>
+
+        <!-- 4. SAĞ ÜST: DURUM CHIP (DYNAMIC ISLAND STYLE) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/feedbackChip"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#E5E5EA"
+            android:backgroundTint="#F2F2F7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="10dp">
+
+                <ImageView
+                    android:id="@+id/imgFeedbackIcon"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@android:drawable/presence_online"
+                    app:tint="#34C759" />
+
+                <TextView
+                    android:id="@+id/txtFeedbackType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="Aktif"
+                    android:textColor="#1C1C1E"
+                    android:textSize="11sp"
+                    android:fontFamily="sans-serif-bold" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/txtFeedbackTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Şimdi"
+            android:textColor="#C7C7CC"
+            android:textSize="10sp"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintEnd_toEndOf="@id/feedbackChip"
+            app:layout_constraintTop_toBottomOf="@id/feedbackChip" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

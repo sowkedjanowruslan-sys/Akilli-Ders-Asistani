@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ULTRA PREMIUM IOS 17 FEEDBACK DIALOG
+    Design: Apple Action Sheet Logic / Glassmorphism
+    Project: Akilli Ders Asistani
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginBottom="24dp"
+    app:cardCornerRadius="36dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="1.5dp"
+    app:strokeColor="#E5E5EA"
+    android:backgroundTint="#F2F2F7">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="12dp">
+
+        <!-- GRABBER / HANDLE BAR (IOS STYLE) -->
+        <View
+            android:layout_width="36dp"
+            android:layout_height="5dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:background="#D1D1D6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <!-- HEADER SECTION -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="28dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/iconHeader"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        android:backgroundTint="#007AFF">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="14dp"
+                            android:src="@android:drawable/ic_dialog_email"
+                            app:tint="#FFFFFF" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/iconHeader"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtDetailTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Detaylı Bildirim"
+                            android:textColor="#1C1C1E"
+                            android:textSize="22sp"
+                            android:fontFamily="sans-serif-black"
+                            android:letterSpacing="-0.02" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Eğitmenine mesajını ilet."
+                            android:textColor="#8E8E93"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-medium" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <!-- IOS STYLE LIST GROUP -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#E5E5EA"
+                    android:backgroundTint="#FFFFFF">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!-- TIME SELECTION ROW -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="NE ZAMAN OLDU?"
+                                android:textColor="#8E8E93"
+                                android:textSize="11sp"
+                                android:fontFamily="sans-serif-black"
+                                android:letterSpacing="0.05"
+                                android:layout_marginBottom="8dp"/>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:background="@drawable/bg_ios_input_field">
+
+                                <Spinner
+                                    android:id="@+id/spinnerMinutes"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/transparent"
+                                    android:paddingStart="12dp"
+                                    android:spinnerMode="dropdown" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginEnd="12dp"
+                                    android:src="@android:drawable/arrow_down_float"
+                                    app:tint="#C7C7CC" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#F2F2F7"
+                            android:layout_marginHorizontal="16dp"/>
+
+                        <!-- MESSAGE INPUT ROW -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="MESAJ DETAYI"
+                                android:textColor="#8E8E93"
+                                android:textSize="11sp"
+                                android:fontFamily="sans-serif-black"
+                                android:letterSpacing="0.05"
+                                android:layout_marginBottom="8dp"/>
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edtStudentMessage"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:minLines="6"
+                                android:gravity="top"
+                                android:hint="Buraya yazın..."
+                                android:background="@drawable/bg_ios_input_field"
+                                android:padding="16dp"
+                                android:textColor="#1C1C1E"
+                                android:textColorHint="#C7C7CC"
+                                android:textSize="16sp"
+                                android:fontFamily="sans-serif" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- INFO BOX (APPLE REMINDERS STYLE) -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    android:backgroundTint="#E1F5FE">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="12dp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/ic_dialog_info"
+                            app:tint="#0288D1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:text="Bu mesaj doğrudan eğitmen ekranına düşer."
+                            android:textSize="13sp"
+                            android:textColor="#0288D1"
+                            android:fontFamily="sans-serif-medium" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- FOOTER BUTTONS (IOS 17 STACKED LOGIC) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="32dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSendDetailed"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="Gönder"
+                        android:textAllCaps="false"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        app:cornerRadius="18dp"
+                        android:backgroundTint="#007AFF"
+                        app:elevation="4dp"
+                        app:icon="@android:drawable/ic_menu_send"
+                        app:iconGravity="textEnd"
+                        app:iconPadding="12dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCancel"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Vazgeç"
+                        android:textAllCaps="false"
+                        android:textColor="#007AFF"
+                        android:textSize="17sp"
+                        android:fontFamily="sans-serif-medium" />
+                </LinearLayout>
+
+                <!-- DECORATIVE BOTTOM SPACE -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

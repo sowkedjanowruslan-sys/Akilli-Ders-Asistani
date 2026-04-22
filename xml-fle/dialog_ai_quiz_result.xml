@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Akıllı Ders Asistanı - Yapay Zeka Test Önizleme Paneli
+    Tasarım: Akademik Minimalizm & Modern Flat
+    Renk Teması: Soft Purple (#6200EE), White (#FFFFFF), Slate Gray (#48484A)
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp">
+
+    <!-- ARKA PLAN DEKORASYONU (Hafif bir derinlik hissi için) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="8dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="#E0E0E0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+            <!-- ÜST BÖLÜM: BAŞLIK VE İKON -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="24dp"
+                android:background="#FBFBFF">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@id/imgAiBadge">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Test Önizleme"
+                        android:textColor="#1C1C1E"
+                        android:textSize="22sp"
+                        android:fontFamily="sans-serif-black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gemini 2.5 Flash tarafından üretildi"
+                        android:textColor="#6200EE"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:alpha="0.8"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imgAiBadge"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_ai_sparkles"
+                    app:tint="#6200EE"
+                    android:alpha="0.9" />
+            </RelativeLayout>
+
+            <!-- AYIRICI ÇİZGİ -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F2F2F7" />
+
+            <!-- BİLGİ ŞERİDİ (Summary Bar) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="12dp"
+                android:background="#F8F9FF">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📝 5 Soru"
+                    android:textSize="12sp"
+                    android:textColor="#48484A"
+                    android:fontFamily="sans-serif-medium" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" • "
+                    android:textColor="#C7C7CC" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⏱️ Yaklaşık 10 dk"
+                    android:textSize="12sp"
+                    android:textColor="#48484A"
+                    android:fontFamily="sans-serif-medium" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" • "
+                    android:textColor="#C7C7CC" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📊 Zorluk: Orta"
+                    android:textSize="12sp"
+                    android:textColor="#48484A"
+                    android:fontFamily="sans-serif-medium" />
+            </LinearLayout>
+
+            <!-- TEST İÇERİK ALANI (Kağıt Görünümü) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="380dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#F2F2F7"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:scrollbarStyle="outsideOverlay">
+
+                    <TextView
+                        android:id="@+id/txtAiQuizContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sorular analiz ediliyor ve kağıda dökülüyor..."
+                        android:textColor="#2C2C2E"
+                        android:textSize="15sp"
+                        android:lineSpacingExtra="10dp"
+                        android:fontFamily="serif"
+                        android:paddingBottom="24dp" />
+                </androidx.core.widget.NestedScrollView>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ALT AKSİYON ALANI -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="24dp"
+                android:paddingBottom="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Soruları onaylıyorsanız sınıfa gönderin."
+                    android:textAlignment="center"
+                    android:textSize="11sp"
+                    android:textColor="#8E8E93"
+                    android:layout_marginBottom="16dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <!-- Vazgeç Butonu (Minimalist) -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCancelQuiz"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:textSize="15sp"
+                        android:layout_weight="0.8"
+                        android:text="Vazgeç"
+                        android:textColor="#FF3B30"
+                        android:textAllCaps="false"
+                        android:fontFamily="sans-serif-medium" />
+
+                    <!-- Gönder Butonu (Premium Mor) -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSendQuizToStudents"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="1.2"
+                        android:layout_marginStart="8dp"
+                        android:textSize="15sp"
+                        android:text="Sınıfa Gönder"
+                        android:textColor="#FFFFFF"
+                        app:backgroundTint="#6200EE"
+                        android:textAllCaps="false"
+                        android:fontFamily="sans-serif-black"
+                        app:cornerRadius="16dp"
+                        app:icon="@android:drawable/ic_menu_send"
+                        app:iconTint="#FFFFFF"
+                        app:elevation="4dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- FOOTER INFO -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Test yayınlandığında öğrenciler için yarışma başlar."
+                android:textAlignment="center"
+                android:paddingBottom="12dp"
+                android:textSize="10sp"
+                android:textColor="#D1D1D6"
+                android:fontFamily="sans-serif-medium"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- EKSTRA: AI PARLAMA EFEKTİ (Kartın arkasında hafif bir mor hare) -->
+    <View
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/bg_ios_ambient_glow"
+        android:backgroundTint="#6200EE"
+        android:alpha="0.05"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="-50dp"
+        android:layout_marginEnd="-50dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

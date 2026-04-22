@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="32dp"
+    android:layout_margin="16dp"
+    app:cardElevation="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Lottie veya Güzel Bir İkon -->
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_ai_sparkles"
+            app:tint="#6200EE"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Akıllı Proje Modülü"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif-black"
+            android:textColor="#1C1C1E"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:layout_marginTop="16dp"
+            android:fadeScrollbars="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Bölüm 1: Nedir -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📌 Bu Modül Ne İşe Yarar?"
+                    android:textStyle="bold"
+                    android:textColor="#6200EE"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Öğrencilerinizin teorik bilgilerini pratiğe dökebileceği, dönem ödevi veya uygulama projelerini profesyonel standartlarda hazırlamanızı sağlar."
+                    android:textSize="13sp"
+                    android:textColor="#48484A"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Bölüm 2: AI Gücü -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="✨ Yapay Zeka (AI) Desteği"
+                    android:textStyle="bold"
+                    android:textColor="#6200EE"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Taslağınız yoksa: Sadece konuyu yazın, AI sizin için akademik bir yönerge ve değerlendirme kriterleri (Rubrik) hazırlar.\n• Taslağınız varsa: AI mevcut metninizi inceler, eksikleri tamamlar ve dili profesyonelleştirir."
+                    android:textSize="13sp"
+                    android:textColor="#48484A"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Bölüm 3: Yayınlama -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📅 Yayınlama ve Takip"
+                    android:textStyle="bold"
+                    android:textColor="#6200EE"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Son teslim tarihini belirleyip yayınladığınızda, proje tüm öğrencilerin paneline anında düşer ve ders sonunda otomatik olarak arşivlenir."
+                    android:textSize="13sp"
+                    android:textColor="#48484A"
+                    android:layout_marginTop="4dp"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnIntroStart"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:text="Anladım, Başlayalım"
+            app:cornerRadius="18dp"
+            android:backgroundTint="#6200EE"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif-bold"/>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

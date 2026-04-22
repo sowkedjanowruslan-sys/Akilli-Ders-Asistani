@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="0.5dp"
+    app:strokeColor="#E5E5EA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtReportLessonName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Matematik Analizi"
+                android:textColor="#1C1C1E"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-black" />
+
+            <TextView
+                android:id="@+id/txtReportPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="%85"
+                android:textSize="22sp"
+                android:fontFamily="sans-serif-black"
+                android:textColor="#34C759" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txtReportDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="13 Mart 2024"
+            android:textColor="#8E8E93"
+            android:textSize="13sp"
+            android:layout_marginTop="2dp" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/reportProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:trackThickness="8dp"
+            app:trackCornerRadius="4dp"
+            android:progress="85"
+            app:indicatorColor="#34C759"
+            app:trackColor="#1A34C759" />
+
+        <TextView
+            android:id="@+id/txtReportStudents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="42 Öğrenci Katıldı"
+            android:textColor="#64748B"
+            android:textSize="12sp"
+            android:fontFamily="sans-serif-medium" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
