@@ -1,0 +1,33 @@
+
+   1. 🖥️ Ana Ekranlar (Activity Layouts)Bu dosyalar uygulamanın tam ekran pencereleridir.
+  •activity_main.xml: Uygulamanın giriş kapısı; giriş yapma veya kullanıcı seçme ekranı.
+  •activity_student.xml: Öğrencinin "Anladım/Anlamadım" butonlarının ve ders kodunun olduğu ana kumanda merkezi.
+  •activity_teacher.xml: Öğretmenin sınıfı anlık takip ettiği profesyonel yönetim paneli.
+  •activity_splash.xml: Uygulama açılırken görünen Apple tarzı logolu açılış ekranı.
+  •activity_lesson_report.xml: Yapay zekanın hazırladığı ders özetinin ve analizlerin tam ekran gösterimi.
+  •activity_student_profile / activity_teacher_profile.xml: Kullanıcıların kişisel bilgilerinin ve akademik puanlarının yönetildiği profiller.
+  
+    2. 🎮 Oyunlaştırma ve Bilişsel ModüllerEğitimi eğlenceli hale getiren bölümlerin tasarımları.
+  •activity_math_play.xml: 550 satırlık o meşhur karmaşık matematik motorunun oyun ekranı.
+  •activity_math_game.xml: Matematik oyunu için kilitli ve açık seviyelerin listelendiği panel.
+  •activity_math_leaderboard.xml: Firebase'den gelen global şampiyonlar listesinin şık sıralaması.
+  •activity_focus_play / activity_focus_matrix.xml: Hafıza ve dikkat testinin (karoların parladığı alan) ana oyun tasarımları.
+  •activity_focus_game.xml: Odaklanma oyunu için premium seviye seçim ekranı.
+
+    3. 💬 Etkileşimli Pop-Up Pencereler (Dialog Layouts)Kullanıcı bir butona bastığında açılan şık pencereler.
+  •dialog_gemini_chat.xml: Yapay zeka (Gemini AI) ile öğrencinin konuştuğu mesajlaşma penceresi.
+  •dialog_math_result.xml: Oyun bittiğinde "Tebrikler" veya "Süre Doldu" diyen sonuç kartı.
+  •dialog_live_subtitles.xml: Hocanın sesinin anlık olarak altyazıya dönüştüğü pencere.
+  •dialog_audio_recording.xml: Ders esnasında ses kaydı alınırken görünen mikrofon arayüzü.
+  •dialog_create_project.xml: TÜBİTAK/TEKNOFEST için rapor hazırlama sihirbazı.
+  •dialog_emergency_alert.xml: Sınıfta bir sorun olduğunda öğretmene giden acil durum uyarısı.
+  •dialog_analysis_intro / dialog_smart_note_intro.xml: Yapay zeka özelliklerini tanıtan profesyonel rehber kartları.
+  
+    4. 📋 Liste Elemanları (Item Layouts)RecyclerView (kaydırılabilir listeler) içindeki her bir satırın tasarımı.
+  •item_leaderboard.xml: Global sıralamadaki bir öğrencinin (Adı, Skoru, Derecesi) satır tasarımı.
+  •item_lesson_report.xml: Ders geçmişindeki bir raporun (Tarih, Başarı Rengi, Konu) kart tasarımı
+  •item_math_level.xml: Seviye listesindeki o şık yuvarlak butonların (Kilitli/Açık) görünümü.
+  item_focus_tile.xml: Focus Matrix oyunundaki cam efektli her bir karonun tasarımı.
+  item_mini_stats / item_stat_card.xml: Dashboard ekranındaki küçük bilgi kutucukları
+    5. ✨ Ortak Tasarım Katmanları
+  •ambient_background_layers.xml: Tüm premium sayfalarda arka planda süzülen o meşhur mor-mavi ışık hüzmelerinin merkezi dosyası.
