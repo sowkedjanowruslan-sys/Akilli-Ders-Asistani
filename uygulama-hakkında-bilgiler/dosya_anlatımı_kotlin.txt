@@ -1,0 +1,25 @@
+🎮 1. OYUN VE BİLİŞSEL GELİŞİM MOTORLARI•MathPlayActivity.kt: Oyunun "Beyni"dir. 550+ satırlık bu motor; karmaşık işaretli sorular üretir, zaman cezalarını hesaplar ve puanlama sistemini yönetir.
+•FocusMatrixActivity.kt: Görsel hafıza ve dikkat oyununun motorudur. Seviyeye göre ızgara (grid) boyutunu ayarlar ve parlayan karoların hafıza algoritmasını çalıştırır.
+•MathGameActivity.kt: Matematik oyunu için premium seviye seçim ekranıdır.
+•MathLeaderboardActivity.kt: Firebase'den dünya genelindeki skorları çekerek öğrencileri sıralayan liderlik tablosudur.
+•MathSoundManager.kt: Oyunlardaki ses efektlerini (doğru/yanlış/bitiş) yöneten ses motorudur.
+
+🤖 2. YAPAY ZEKA VE SES SİSTEMLERİ•LiveTranscriptionHelper.kt: Hocanın konuşmalarını anlık olarak yazıya çeviren (Speech-to-Text) yardımcı sınıftır.
+•AudioRecorderHandler.kt: Ders esnasında yüksek kalitede ses kaydı alınmasını sağlayan yönetim dosyasıdır.
+•ProjectManager.kt: TÜBİTAK ve TEKNOFEST raporları hazırlayan "Proje Modülü"nün teknik mantığını barındırır.
+
+📊 3. RAPORLAMA VE VERİ ANALİTİĞİ•ReportAdapter.kt: Rapor listesinin "Ressamı"dır. Öğrencinin anlama yüzdesine göre raporları Yeşil, Turuncu veya Kırmızı renklerle boyayan mantığı içerir.
+•LessonReportActivity.kt: Yapay zeka tarafından üretilen ders özetinin ve analizlerin gösterildiği detaylı rapor ekranıdır.
+•LessonReport.kt & LessonHistory.kt: Ders verilerinin Firebase ve uygulama arasında taşınmasını sağlayan veri modelleridir.
+•QuizResultManager.kt: Sınav sonuçlarını ve akademik başarı metriklerini takip eden yöneticidir.
+
+👤 4. KULLANICI YÖNETİMİ VE PANELLER•StudentActivity.kt: Öğrencinin ana kumanda merkezidir. "Anladım/Anlamadım" butonları ve derse katılım sistemi buradan yönetilir.
+•TeacherActivity.kt: Öğretmenin sınıfı anlık takip ettiği profesyonel yönetim panelidir.
+•MainActivity.kt: Uygulamanın giriş kapısıdır; kullanıcıyı tanır ve doğru panele yönlendirir.
+•TeacherRegisterActivity.kt & TeacherProfileActivity.kt: Öğretmen hesaplarının oluşturulması ve profil bilgilerinin (Bölüm, Okul vb.) yönetilmesini sağlar.
+•StudentProfileActivity.kt: Öğrenci bilgilerinin ve toplam kazandığı puanların gösterildiği profil ekranıdır.
+•SplashActivity.kt: Uygulama açılırken görünen animasyonlu Apple tarzı logo ekranıdır.
+
+🛠️ 5. YARDIMCI VERİ MODELLERİ
+•FeedbackModel.kt: Canlı ders esnasında gönderilen "Anladım" veya "Soru Var" gibi geri bildirimlerin veri yapısıdır.
+•StudentEvents.kt: Öğrenci etkileşimlerini (tıklamalar, girişler) dinleyen ve kaydeden sistemdir.
