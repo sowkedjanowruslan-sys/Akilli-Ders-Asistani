@@ -8,7 +8,7 @@ class GeminiAiManager {
 
 
 
-    private val apiKey = "AIzaSyC9mjT6nRH1W3pGhaIKKk1-_sOdNlRAQCc"
+    private val apiKey = "API-KEY"
 
     private val model = GenerativeModel(
         modelName = "gemini-2.5-flash",
