@@ -182,7 +182,7 @@ class TeacherActivity : AppCompatActivity() {
 
         val generativeModel = GenerativeModel(
             modelName = "gemini-2.5-flash",
-            apiKey = "AIzaSyC9mjT6nRH1W3pGhaIKKk1-_sOdNlRAQCc",
+            apiKey = "API-KEY",
             systemInstruction = content { text(systemInstruction) },
             generationConfig = config
         )
