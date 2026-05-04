@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FOCUS MATRIX - NEURAL TILE UNIT
+    DESIGN: APPLE iOS 18 GLASSMORPHISM & DEPTH
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/outerTileCard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="28dp"
+    app:cardElevation="6dp"
+    app:cardMaxElevation="10dp"
+    app:strokeWidth="1.5dp"
+    app:strokeColor="#1A000000"
+    app:cardBackgroundColor="#F2F2F7"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- CORE ELEMENT: Renk değişiminin asıl yaşanacağı iç katman -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/innerTileCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Numara Göstergesi: Sequence sırasında parlar -->
+                <TextView
+                    android:id="@+id/txtTileNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-black"
+                    android:text="1"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:letterSpacing="-0.02"
+                    android:alpha="0"
+                    android:visibility="gone" />
+
+                <!-- Parlama Efekti Katmanı (Zarif bir dokunuş için) -->
+                <View
+                    android:id="@+id/viewGlowOverlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_ios_glass_gradient"
+                    android:alpha="0.1" />
+
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

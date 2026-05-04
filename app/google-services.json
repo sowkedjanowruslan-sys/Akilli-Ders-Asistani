@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "537821073883",
+    "firebase_url": "https://akilli-ders-asistani-default-rtdb.firebaseio.com",
+    "project_id": "akilli-ders-asistani",
+    "storage_bucket": "akilli-ders-asistani.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537821073883:android:a4f31d5c01f2891b5bd7fe",
+        "android_client_info": {
+          "package_name": "com.example.akillidersasistani"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_qvpO7udIr8SJ7hrHoiJqUGZpvDwr3Xo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

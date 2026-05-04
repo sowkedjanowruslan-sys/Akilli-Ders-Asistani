@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Katman 1: Geniş Mavi Glow (Yumuşak Geçiş) -->
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="50%p"
+                android:startColor="#1A3B82F6"
+                android:centerColor="#083B82F6"
+                android:endColor="#00000000" />
+        </shape>
+    </item>
+
+    <!-- Katman 2: İç Mor Işıltı (Derinlik Efekti) -->
+    <item android:left="40dp" android:top="40dp" android:right="40dp" android:bottom="40dp">
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="45%p"
+                android:startColor="#127C3AED"
+                android:endColor="#00000000" />
+        </shape>
+    </item>
+
+    <!-- Katman 3: Merkez Noktasal Parlama -->
+    <item android:left="100dp" android:top="100dp" android:right="100dp" android:bottom="100dp">
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="30%p"
+                android:startColor="#0DFFFFFF"
+                android:endColor="#00000000" />
+        </shape>
+    </item>
+</layer-list>

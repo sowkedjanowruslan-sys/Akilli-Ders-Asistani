@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 1. KATMAN: DIŞ GÖLGE (Yumuşaklık hissi için) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#0D000000" /> <!-- %5 Siyahlık (Çok hafif gölge) -->
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+
+    <!-- 2. KATMAN: ANA KART (Beyaz alan) -->
+    <!-- Alt ve yanlardan 2dp boşluk bırakarak gölgeyi görünür kılıyoruz -->
+    <item
+        android:bottom="3dp"
+        android:left="1dp"
+        android:right="1dp"
+        android:top="1dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF" />
+            <corners android:radius="18dp" />
+            <stroke
+                android:width="1dp"
+                android:color="#F1F5F9" /> <!-- İnce modern çerçeve -->
+        </shape>
+    </item>
+
+</layer-list>

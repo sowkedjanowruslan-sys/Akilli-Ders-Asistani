@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Buradaki 'parent' kısmına dikkat edin! -->
+    <style name="Theme.AkilliDersAsistani" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Renkleriniz burada kalabilir -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <!-- ... diğer itemlar -->
+    </style>
+</resources>

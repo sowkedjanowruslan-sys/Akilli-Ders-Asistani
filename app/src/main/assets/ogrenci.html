@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Öğrenci</title>
+<style>
+button{
+  width:90%;
+  padding:20px;
+  margin:10px;
+  font-size:20px;
+  border-radius:12px;
+  border:none;
+}
+.red{background:#ff4d4d;color:white;}
+.yellow{background:#ffcc00;}
+.blue{background:#4da6ff;color:white;}
+</style>
+</head>
+
+<body>
+
+<button class="red" onclick="gonder('anlamadim')">❌ Anlamadım</button>
+<button class="yellow" onclick="gonder('tekrar')">🔁 Tekrar</button>
+<button class="blue" onclick="gonder('anladim')">✅ Anladım</button>
+
+</body>
+<script type="module">
+  import { getDatabase, ref, onChildAdded }
+from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+
+
+/* SES KUYRUĞU */
+let sesKuyruk = [];
+let konusuyor = false;
+
+function sesiOynat(){
+  if(konusuyor || sesKuyruk.length === 0) return;
+
+  konusuyor = true;
+  const metin = sesKuyruk.shift();
+
+  const ses = new SpeechSynthesisUtterance(metin);
+  ses.lang = "tr-TR";
+  ses.rate = 1;
+  ses.pitch = 1;
+
+  ses.onend = ()=>{
+    konusuyor = false;
+    sesiOynat();
+  };
+
+  speechSynthesis.speak(ses);
+}
+
+/* Firebase Bildirim Dinle */
+onChildAdded(ref(db,"notifications"), (snap)=>{
+  const data = snap.val();
+  sesKuyruk.push(data.text);
+  sesiOynat();
+});
+import { initializeApp } from
+"https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+import { getDatabase, ref, set }
+from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+
+const app = initializeApp({
+  apiKey:"XXXX",
+  databaseURL:"XXXX"
+});
+
+const db = getDatabase(app);
+
+let kilit = false;
+
+function konus(metin){
+  const msg = new SpeechSynthesisUtterance(metin);
+  msg.lang = "tr-TR";
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(msg);
+}
+
+window.gonder = function(tip){
+  if(kilit) return;
+
+  kilit = true;
+  setTimeout(()=> kilit=false,5000);
+
+  const zaman = Date.now();
+  set(ref(db,"feedbacks/"+zaman),{
+    type: tip
+  });
+
+  if(tip==="anlamadim") konus("Bir öğrenci anlamadı");
+  if(tip==="tekrar") konus("Bir öğrenci tekrar istiyor");
+  if(tip==="anladim") konus("Bir öğrenci anladı");
+}
+</script>
+
+</html>

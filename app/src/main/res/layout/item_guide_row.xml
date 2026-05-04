@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    AKILLI DERS ASISTANI - GUIDE ROW COMPONENT
+    DESIGN: NEUTRAL STUDIO / iOS 18 PLATINUM
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="#F2F2F7"
+    android:backgroundTint="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <!-- ICON CONTAINER (Bento Style) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            android:backgroundTint="#F8F9FF">
+
+            <ImageView
+                android:id="@+id/imgGuideIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_dialog_info"
+                app:tint="#5856D6" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- TEXT CONTENT -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtGuideTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Başlık Alanı"
+                android:textColor="#1C1C1E"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-bold"
+                tools:text="1. Neural Oturum Yönetimi" />
+
+            <TextView
+                android:id="@+id/txtGuideDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Bu alanda özelliğin detaylı açıklaması yer alacaktır."
+                android:textColor="#8E8E93"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif-medium"
+                android:lineHeight="18sp"
+                tools:text="Kurum ve ders bilgisini girerek saniyeler içinde benzersiz bir ders kodu oluşturun." />
+        </LinearLayout>
+
+        <!-- IOS STYLE DISCLOSURE INDICATOR -->
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="8dp"
+            android:alpha="0.3"
+            android:src="@android:drawable/ic_media_play"
+            app:tint="#C7C7CC" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

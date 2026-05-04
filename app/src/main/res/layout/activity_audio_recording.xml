@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    =========================================================================================
+    PROJECT: AKILLI DERS ASISTANI - AI VOICE STUDIO PRO
+    VERSION: V5.0 MASTER ARCHITECT [RETINA VISUALIZER EDITION]
+    DESIGN PHILOSOPHY: APPLE iOS 18 STUDIO MODE & GLASSMORPHISM
+    DEVELOPER NOTE: Bu dosya 230 satır profesyonel UI mimarisi içerir.
+    =========================================================================================
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/studioRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#050505"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    tools:context=".AudioRecordingActivity">
+
+    <!--
+        LAYER 0: AMBIENT INTELLIGENCE LIGHTING
+        Arka planda süzülen stüdyo ışıkları.
+    -->
+    <include
+        layout="@layout/ambient_background_layers" />
+
+    <!--
+        LAYER 1: DYNAMIC STUDIO HEADER
+        Üst bar navigasyon ve durum indikatörü.
+    -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarStudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarStudio"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:contentInsetStart="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp">
+
+                <ImageButton
+                    android:id="@+id/btnCloseStudio"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Kaydı İptal Et"
+                    android:src="@android:drawable/ic_menu_close_clear_cancel"
+                    app:tint="#FFFFFF" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="0.2"
+                        android:text="AI SES LABORATUVARI"
+                        android:textColor="#8E8E93"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/txtStudioStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="GERÇEK ZAMANLI İŞLEME"
+                        android:textColor="#34C759"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!--
+        LAYER 2: THE FROSTED GLASS VISUALIZER ARENA
+        Ses dalgalarının gerçekçi şekilde aktığı buzlu cam panel.
+    -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/waveCard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="56dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="#0DFFFFFF"
+        app:strokeWidth="1.5dp"
+        app:strokeColor="#1AFFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/appBarStudio"
+        app:layout_constraintBottom_toTopOf="@id/transcriptCard">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- ARKA PLAN DERİNLİK PARILTISI -->
+            <View
+                android:id="@+id/visualizerGlow"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:background="@drawable/bg_ios_ambient_glow"
+                android:backgroundTint="#FF9500"
+                android:alpha="0.08"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!--
+                GERÇEK ZAMANLI DALGA MOTORU
+                DİKKAT: AudioVisualizerView.kt sınıfına bağlıdır.
+            -->
+            <com.example.akillidersasistani.AudioVisualizerView
+                android:id="@+id/audioVisualizer"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginHorizontal="24dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/txtListeningHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="36dp"
+                android:text="AI SESİNİZİ VERİYE DÖNÜŞTÜRÜYOR"
+                android:textColor="#FF9500"
+                android:textSize="10sp"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--
+        LAYER 3: LIVE TRANSCRIPT PANEL
+        Hocanın sözlerinin anlık belirdiği akıllı cam panel.
+    -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/transcriptCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="32dp"
+        app:cardCornerRadius="32dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="#0DFFFFFF"
+        app:strokeWidth="1dp"
+        app:strokeColor="#0DFFFFFF"
+        app:layout_constraintBottom_toTopOf="@id/controlPanel">
+
+        <TextView
+            android:id="@+id/txtTranscriptLive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp"
+            android:text="Hocanın sözleri burada anlık belirecek..."
+            android:textColor="#F2F2F7"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:fontFamily="sans-serif-medium"
+            android:lineSpacingMultiplier="1.2" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--
+        LAYER 4: STUDIO CONTROL PANEL
+        Sayaç ve bitirme aksiyonu.
+    -->
+    <LinearLayout
+        android:id="@+id/controlPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingBottom="56dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/txtRecordingTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00:00"
+            android:textColor="#FFFFFF"
+            android:textSize="64sp"
+            android:fontFamily="sans-serif-thin"
+            android:letterSpacing="-0.03" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KAYIT SÜRESİ"
+            android:textColor="#48484A"
+            android:textSize="10sp"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.2"
+            android:layout_marginTop="-4dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFinishAndAnalyze"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:layout_marginHorizontal="48dp"
+            android:layout_marginTop="40dp"
+            android:text="Dersi Bitir ve Analiz Et"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-bold"
+            app:cornerRadius="26dp"
+            app:backgroundTint="#FF3B30"
+            app:icon="@android:drawable/ic_media_pause"
+            app:iconPadding="12dp"
+            app:elevation="16dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

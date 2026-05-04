@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="#E5E5EA"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Sıralama Numarası -->
+        <TextView
+            android:id="@+id/txtRank"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="#1C1C1E"
+            android:textSize="16sp" />
+
+        <!-- Profil Fotoğrafı Alanı (Baş harf) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="12dp"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#F2F2F7">
+
+            <TextView
+                android:id="@+id/txtUserInitial"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="A"
+                android:textColor="#8E8E93"
+                android:fontFamily="sans-serif-bold"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- İsim ve Bölüm -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-bold"
+                android:text="Kullanıcı Adı"
+                android:textColor="#1C1C1E"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtMajor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yazılım Mühendisliği"
+                android:textColor="#8E8E93"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Puan -->
+        <TextView
+            android:id="@+id/txtScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="1540"
+            android:textColor="#1C1C1E"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

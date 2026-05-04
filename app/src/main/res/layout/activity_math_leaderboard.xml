@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    AKILLI DERS ASISTANI - NEUTRAL STUDIO EDITION
+    DESIGN: Minimalist Industrial iOS 18
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ns_background"
+    android:clipChildren="false">
+
+    <!-- LAYER 0: NEUTRAL AMBIENT (Gereksiz renklerden arındırılmış, soft derinlik) -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <View
+            android:layout_width="600dp"
+            android:layout_height="600dp"
+            android:layout_gravity="top|center"
+            android:layout_marginTop="-350dp"
+            android:alpha="0.4"
+            android:background="@drawable/bg_ios_ambient_glow"
+            android:backgroundTint="#E5E5EA" />
+    </FrameLayout>
+
+    <!-- LAYER 1: APPBAR & COLLAPSING HEADER -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLeaderboard"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false"
+            app:contentScrim="@color/ns_surface">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.7">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentBottom="true"
+                    android:paddingHorizontal="24dp"
+                    android:paddingBottom="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AKILLI DERS ASİSTANI"
+                        android:textColor="@color/ns_text_secondary"
+                        android:textSize="11sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:letterSpacing="0.2"
+                        android:textAllCaps="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Liderlik Tablosu"
+                        android:textColor="@color/ns_text_primary"
+                        android:textSize="34sp"
+                        android:fontFamily="sans-serif-black"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="-0.03" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                android:elevation="0dp">
+
+                <TextView
+                    android:id="@+id/txtToolbarTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sıralama"
+                    android:textColor="@color/ns_text_primary"
+                    android:textSize="17sp"
+                    android:fontFamily="sans-serif-bold"
+                    android:alpha="0"
+                    android:layout_gravity="center"/>
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- LAYER 2: LIST CONTENT -->
+    <!-- Neutral Studio stili için listeye hafif bir margin ve yuvarlatılmış köşeler verdik -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvLeaderboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="100dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/item_leaderboard_neutral" />
+
+    <!-- LAYER 3: MY STATUS (Floating Bottom Card) -->
+    <!-- Kullanıcının kendi sırasını altta sabit ve şık bir cam panelde gösteriyoruz -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="12dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/ns_glass_stroke"
+        app:cardBackgroundColor="#CCFFFFFF"> <!-- Yarı şeffaf beyaz -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/txtMyRank"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/shape_rank_circle"
+                android:gravity="center"
+                android:text="12"
+                android:textColor="@color/ns_surface"
+                android:fontFamily="sans-serif-black"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Senin Sıralaman"
+                    android:textSize="12sp"
+                    android:textColor="@color/ns_text_secondary"/>
+
+                <TextView
+                    android:id="@+id/txtMyName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ahmet Yılmaz"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-bold"
+                    android:textColor="@color/ns_text_primary"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtMyScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2,450 Puan"
+                android:fontFamily="sans-serif-black"
+                android:textColor="@color/ns_accent"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- LOADING STATE -->
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/loader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:indicatorColor="@color/ns_accent"
+        app:trackColor="#E5E5EA"
+        android:layout_gravity="top"
+        app:layout_anchor="@id/appBarLeaderboard"
+        app:layout_anchorGravity="bottom"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

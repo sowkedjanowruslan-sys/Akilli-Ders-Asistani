@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--NEURAL STUDIO PREMIUM GENDER PICKER
+    iOS 17 Fluid UI Design
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginBottom="24dp"
+    app:cardCornerRadius="44dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="1.5dp"
+    app:strokeColor="#E2E8F0"
+    android:backgroundTint="#F8FAFC">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="32dp">
+
+        <!-- IOS HANDLE -->
+        <View
+            android:id="@+id/viewGrabber"
+            android:layout_width="36dp"
+            android:layout_height="5dp"
+            android:layout_marginTop="12dp"
+            android:background="#64748B"
+            android:alpha="0.2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- BAŞLIK ALANI -->
+        <TextView
+            android:id="@+id/txtHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Profilini Özelleştir"
+            android:textColor="#0F172A"
+            android:textSize="22sp"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="-0.02"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewGrabber" />
+
+        <TextView
+            android:id="@+id/txtSubHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Avatarın bu seçime göre şekillenecektir."
+            android:textColor="#64748B"
+            android:textSize="13sp"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtHeader" />
+
+        <!-- SEÇENEKLER KONTEYNERI -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            app:layout_constraintTop_toBottomOf="@id/txtSubHeader">
+
+            <!-- ERKEK SEÇENEĞİ -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnGenderMale"
+                android:layout_width="match_parent"
+                android:layout_height="76dp"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#DBEAFE"
+                android:backgroundTint="#FFFFFF"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="20dp">
+
+                    <TextView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_ios_round_button"
+                        android:backgroundTint="#EFF6FF"
+                        android:text="♂️"
+                        android:gravity="center"
+                        android:textSize="20sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Erkek"
+                        android:textColor="#1E40AF"
+                        android:textSize="17sp"
+                        android:fontFamily="sans-serif-bold" />
+
+                    <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#BFDBFE"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- KADIN SEÇENEĞİ -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnGenderFemale"
+                android:layout_width="match_parent"
+                android:layout_height="76dp"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#FCE7F3"
+                android:backgroundTint="#FFFFFF"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="20dp">
+
+                    <TextView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_ios_round_button"
+                        android:backgroundTint="#FFF1F2"
+                        android:text="♀️"
+                        android:gravity="center"
+                        android:textSize="20sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Kadın"
+                        android:textColor="#9D174D"
+                        android:textSize="17sp"
+                        android:fontFamily="sans-serif-bold" />
+
+                    <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#FBCFE8"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- DİĞER SEÇENEĞİ (YENİ EKLEDİK) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnGenderOther"
+                android:layout_width="match_parent"
+                android:layout_height="76dp"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#F1F5F9"
+                android:backgroundTint="#FFFFFF"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="20dp">
+
+                    <TextView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_ios_round_button"
+                        android:backgroundTint="#F8FAFC"
+                        android:text="✨"
+                        android:gravity="center"
+                        android:textSize="20sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Belirtmek İstemiyorum"
+                        android:textColor="#475569"
+                        android:textSize="17sp"
+                        android:fontFamily="sans-serif-bold" />
+
+                    <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#CBD5E1"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

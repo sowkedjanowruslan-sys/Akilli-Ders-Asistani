@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    NEURAL STUDIO PREMIUM JOIN INTERFACE
+    IOS 17 Aesthetics / Glassmorphism Concept
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="40dp"
+    app:cardElevation="0dp"
+    android:backgroundTint="#FFFFFF">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="28dp">
+
+        <!-- 1. ÜST TUTAMAK (IOS STYLE) -->
+        <View
+            android:id="@+id/viewHandle"
+            android:layout_width="40dp"
+            android:layout_height="5dp"
+            android:background="#E2E8F0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- 2. İKON VE BAŞLIK GRUBU -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/iconContainer"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="32dp"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#E0E7FF"
+            android:backgroundTint="#F5F7FF"
+            app:layout_constraintTop_toBottomOf="@id/viewHandle"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_menu_send"
+                app:tint="#4F46E5" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/txtHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Canlı Derse Katıl"
+            android:textColor="#0F172A"
+            android:textSize="24sp"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="-0.02"
+            app:layout_constraintTop_toTopOf="@id/iconContainer"
+            app:layout_constraintBottom_toTopOf="@id/txtSubHeader"
+            app:layout_constraintStart_toEndOf="@id/iconContainer"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/txtSubHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="8 haneli ders PIN'ini gir"
+            android:textColor="#64748B"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintBottom_toBottomOf="@id/iconContainer"
+            app:layout_constraintStart_toStartOf="@id/txtHeader"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- 3. GİRİŞ ALANI (MODERN BENTO STYLE) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/inputCard"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="32dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="#EEF2FF"
+            android:backgroundTint="#F8FAFC"
+            app:layout_constraintTop_toBottomOf="@id/iconContainer">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutCode"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:hintEnabled="false"
+                app:boxBackgroundMode="none">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCourseCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:hint="•••• ••••"
+                    android:inputType="textCapCharacters"
+                    android:maxLength="8"
+                    android:letterSpacing="0.4"
+                    android:textSize="28sp"
+                    android:textColor="#4F46E5"
+                    android:fontFamily="sans-serif-black"
+                    android:background="@android:color/transparent" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 4. GÜVENLİK NOTU -->
+        <LinearLayout
+            android:id="@+id/securityNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/inputCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@android:drawable/ic_lock_idle_lock"
+                app:tint="#94A3B8" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Uçtan uca şifreli bağlantı"
+                android:textColor="#94A3B8"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-medium" />
+        </LinearLayout>
+
+        <!-- 5. AKSİYON BUTONU (NEURAL GRADIENT) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnConfirmJoin"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="32dp"
+            android:text="Derse Bağlan"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-black"
+            app:cornerRadius="20dp"
+            android:backgroundTint="#4F46E5"
+            app:icon="@android:drawable/ic_media_play"
+            app:iconGravity="textStart"
+            app:iconPadding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/securityNote"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

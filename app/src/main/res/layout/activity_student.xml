@@ -1,0 +1,1364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".StudentActivity">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_neural_bg">
+
+        <!-- ARKA PLAN GLOW EFEKTLERİ -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Üst Sağ Glow -->
+            <View
+                android:layout_width="420dp"
+                android:layout_height="420dp"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="-160dp"
+                android:layout_marginEnd="-120dp"
+                android:alpha="0.12"
+                android:background="@drawable/neural_glow_indigo_premium" />
+
+            <!-- Alt Sol Glow -->
+            <View
+                android:layout_width="380dp"
+                android:layout_height="380dp"
+                android:layout_gravity="bottom|start"
+                android:layout_marginBottom="-120dp"
+                android:layout_marginStart="-60dp"
+                android:alpha="0.10"
+                android:background="@drawable/neural_glow_emerald_premium" />
+
+            <!-- Ortada Pulse Efekti -->
+            <View
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:layout_gravity="center"
+                android:alpha="0.06"
+                android:background="@drawable/pulse_ring_gradient"
+                android:visibility="gone"
+                android:id="@+id/pulse_center" />
+
+        </FrameLayout>
+
+        <!-- HEADER APP BAR -->
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:elevation="0dp">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:titleEnabled="false">
+
+                <!-- HEADER CONTENT -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="28dp"
+                    android:paddingTop="80dp"
+                    android:paddingBottom="32dp"
+                    app:layout_collapseMode="parallax">
+
+                    <!-- BRAND LOGO -->
+                    <LinearLayout
+                        android:id="@+id/header_brand"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            app:cardCornerRadius="14dp"
+                            app:elevation="8dp"
+                            app:strokeColor="#A5B4FC"
+                            app:strokeWidth="1dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="N"
+                                android:textColor="#FFFFFF"
+                                android:background="@drawable/brand_gradient"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:fontFamily="sans-serif-black"/>
+
+                        </com.google.android.material.card.MaterialCardView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="NEURAL STUDIO"
+                            android:textColor="#4F46E5"
+                            android:textSize="16sp"
+                            android:fontFamily="sans-serif-black"
+                            android:letterSpacing="-0.02"
+                            android:textAllCaps="false"/>
+
+                    </LinearLayout>
+
+                    <!-- QR SCANNER & MENU BUTTONS -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <!-- QR SCANNER BUTTON -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/btnScanQR"
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:layout_marginEnd="12dp"
+                            app:cardCornerRadius="26dp"
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:strokeWidth="1.5dp"
+                            app:strokeColor="#E2E8F0"
+                            app:elevation="6dp">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_qr_scanner"
+                                app:tint="#64748B"/>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- NOTIFICATION BUTTON -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/btn_notifications"
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            app:cardCornerRadius="26dp"
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:strokeWidth="1.5dp"
+                            app:strokeColor="#E2E8F0"
+                            app:elevation="6dp">
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_bell"
+                                app:tint="#64748B"/>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                    <!-- GREETING SECTION -->
+                    <LinearLayout
+                        android:id="@+id/layout_greeting_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="36dp"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@id/header_brand">
+
+                        <!-- DATE -->
+                        <TextView
+                            android:id="@+id/txt_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Salı, 28 Kasım 2023"
+                            android:textColor="#64748B"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-medium"
+                            android:letterSpacing="0.01"/>
+
+                        <!-- MAIN GREETING -->
+                        <TextView
+                            android:id="@+id/txt_greeting"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="Selam Kanka! 👋"
+                            android:textColor="#0F172A"
+                            android:textSize="32sp"
+                            android:fontFamily="sans-serif-black"
+                            android:letterSpacing="-0.04"
+                            android:lineHeight="36sp"/>
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switchAnon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Gizli Mod (Anonim)"
+                            android:textColor="#64748B"
+                            android:textSize="12sp"
+                            android:fontFamily="sans-serif-medium"
+                            app:thumbTint="#FFFFFF"
+                            app:trackTint="#4F46E5" />
+
+                    </LinearLayout>
+
+                    <!-- activity_student.xml içinde layout_greeting_container'ın bittiği yerin altına koy -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAvatar"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        app:cardCornerRadius="36dp"
+                        app:cardBackgroundColor="#F1F5F9"
+                        app:elevation="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/layout_greeting_container"
+                        app:layout_constraintBottom_toBottomOf="@id/layout_greeting_container">
+
+                        <ImageView
+                            android:id="@+id/imgAvatar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_student_default"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- COLLAPSED TOOLBAR (Düzeltilmiş ve Menü Butonu Eklenmiş Hali) -->
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:contentInsetStart="0dp"
+                    app:contentInsetStartWithNavigation="0dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="16dp">
+
+                        <!-- SOLDA: BAŞLIK -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:text="Bağlantı Paneli"
+                            android:textColor="#1C1C1E"
+                            android:textSize="18sp"
+                            android:fontFamily="sans-serif-bold" />
+
+                        <!-- EN SAĞDA: MENÜ BUTONU (Hatanın Çözümü Burası) -->
+                        <ImageButton
+                            android:id="@+id/btnOpenMenu"
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@android:drawable/ic_menu_sort_by_size"
+                            app:tint="#1C1C1E" />
+
+                        <!-- MENÜNÜN SOLUNDA: QR BUTONU -->
+                        <ImageButton
+                            android:id="@+id/btnScanQR_Toolbar"
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:layout_toStartOf="@id/btnOpenMenu"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="8dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_qr_scan_custom"
+                            app:tint="#1C1C1E"
+                            android:padding="10dp"
+                            android:scaleType="centerInside" />
+
+                    </RelativeLayout>
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- MAIN SCROLL CONTENT -->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="140dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="24dp">
+
+                <!-- STATS CARDS ROW -->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:scrollbars="none"
+                    android:overScrollMode="never">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="16dp"
+                        android:paddingEnd="24dp">
+
+                        <!-- DERS PUANI CARD -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="168dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            app:cardCornerRadius="24dp"
+                            app:cardElevation="8dp"
+                            app:strokeColor="#E2E8F0"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="20dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="DERS PUANI"
+                                    android:textSize="11sp"
+                                    android:textColor="#64748B"
+                                    android:fontFamily="sans-serif-black"
+                                    android:letterSpacing="0.08"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:text="96.4"
+                                    android:textSize="26sp"
+                                    android:textColor="#0F172A"
+                                    android:fontFamily="sans-serif-black"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:text="↑ %3.2"
+                                    android:textSize="12sp"
+                                    android:textColor="#10B981"
+                                    android:fontFamily="sans-serif-bold"/>
+
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- ODAKLANMA CARD -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="168dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            app:cardCornerRadius="24dp"
+                            app:cardElevation="8dp"
+                            app:strokeColor="#E2E8F0"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="20dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="ODAKLANMA"
+                                    android:textSize="11sp"
+                                    android:textColor="#64748B"
+                                    android:fontFamily="sans-serif-black"
+                                    android:letterSpacing="0.08"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:text="58dk"
+                                    android:textSize="26sp"
+                                    android:textColor="#0F172A"
+                                    android:fontFamily="sans-serif-black"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:text="İyi 👏"
+                                    android:textSize="12sp"
+                                    android:textColor="#F59E0B"
+                                    android:fontFamily="sans-serif-bold"/>
+
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- HIZ CARD -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="168dp"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="24dp"
+                            app:cardElevation="8dp"
+                            app:strokeColor="#E2E8F0"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="20dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="HIZ"
+                                    android:textSize="11sp"
+                                    android:textColor="#64748B"
+                                    android:fontFamily="sans-serif-black"
+                                    android:letterSpacing="0.08"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:text="1.4x"
+                                    android:textSize="26sp"
+                                    android:textColor="#0F172A"
+                                    android:fontFamily="sans-serif-black"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:text="Normal 📊"
+                                    android:textSize="12sp"
+                                    android:textColor="#3B82F6"
+                                    android:fontFamily="sans-serif-bold"/>
+
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <!-- LIVE SESSION HERO CARD -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    app:cardCornerRadius="32dp"
+                    app:cardElevation="16dp"
+                    app:cardBackgroundColor="#4F46E5">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/hero_gradient"
+                        android:padding="28dp">
+
+                        <!-- LIVE INDICATOR -->
+                        <LinearLayout
+                            android:id="@+id/live_indicator"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_live_indicator_premium"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="8dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <View
+                                android:layout_width="8dp"
+                                android:layout_height="8dp"
+                                android:background="@drawable/dot_pulse_live"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:text="CANLI DERS"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:fontFamily="sans-serif-black"
+                                android:letterSpacing="0.05"/>
+
+                        </LinearLayout>
+
+                        <!-- HERO TITLE -->
+                        <TextView
+                            android:id="@+id/hero_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Derse Hemen Bağlan"
+                            android:textColor="#FFFFFF"
+                            android:textSize="26sp"
+                            android:fontFamily="sans-serif-black"
+                            android:letterSpacing="-0.02"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/live_indicator"/>
+
+                        <!-- HERO DESCRIPTION -->
+                        <TextView
+                            android:id="@+id/hero_desc"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="QR kodu tarat veya ders kodunu manuel gir. Hemen ders akışına katıl!"
+                            android:textColor="#C7D2FE"
+                            android:textSize="15sp"
+                            android:lineHeight="22sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/hero_title"/>
+
+
+                <LinearLayout
+                    android:id="@+id/layout_input_join"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/hero_desc">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnJoin"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_marginTop="20dp"
+                        android:text="BAĞLAN"
+                        android:textColor="#4F46E5"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-black"
+                        app:backgroundTint="#FFFFFF"
+                        app:cornerRadius="20dp"
+                        app:elevation="4dp" />
+
+            </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/txtConnectionStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="DERSE BAĞLANMA BEKLENİYOR"
+                            android:textColor="#A5B4FC"
+                            android:textSize="13sp"
+                            android:fontFamily="sans-serif-medium"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/layout_input_join"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- REACTION BUTTONS SECTION -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Canlı Reaksiyonlar"
+                        android:textColor="#0F172A"
+                        android:textSize="18sp"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="-0.01"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Aktif ✅"
+                        android:textColor="#10B981"
+                        android:textSize="13sp"
+                        android:fontFamily="sans-serif-bold"/>
+
+                </LinearLayout>
+
+                <!-- REACTION BUTTONS GRID -->
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="4"
+                    android:rowCount="1"
+                    android:alignmentMode="alignBounds">
+
+                    <!-- ANLADIM BUTTON -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnUnderstood"
+                        android:layout_width="0dp"
+                        android:layout_height="110dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#E2E8F0"
+                        app:strokeWidth="1.5dp"
+                        app:cardBackgroundColor="#ECFDF5">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:background="?attr/selectableItemBackground">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🚀"
+                                android:textSize="28sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Anladım"
+                                android:textSize="14sp"
+                                android:textColor="#059669"
+                                android:fontFamily="sans-serif-bold"/>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- TEKRAR BUTTON -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnRepeat"
+                        android:layout_width="0dp"
+                        android:layout_height="110dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#E2E8F0"
+                        app:strokeWidth="1.5dp"
+                        app:cardBackgroundColor="#FEF3C7">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🔄"
+                                android:textSize="28sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Tekrar"
+                                android:textSize="14sp"
+                                android:textColor="#D97706"
+                                android:fontFamily="sans-serif-bold"/>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- YAVAŞLA BUTTON -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnNotUnderstood"
+                        android:layout_width="0dp"
+                        android:layout_height="110dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#E2E8F0"
+                        app:strokeWidth="1.5dp"
+                        app:cardBackgroundColor="#FEF2F2">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🐢"
+                                android:textSize="28sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Yavaşla"
+                                android:textSize="14sp"
+                                android:textColor="#DC2626"
+                                android:fontFamily="sans-serif-bold"/>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- ACİL BUTTON -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnEmergency"
+                        android:layout_width="0dp"
+                        android:layout_height="110dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="12dp"
+                        app:strokeColor="#FECACA"
+                        app:strokeWidth="2dp"
+                        app:cardBackgroundColor="#FEE2E2">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🚨"
+                                android:textSize="28sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Acil!"
+                                android:textSize="14sp"
+                                android:textColor="#DC2626"
+                                android:fontFamily="sans-serif-black"/>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </GridLayout>
+
+                <!-- NEURAL AI SUGGESTION CARD -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36dp"
+                    app:cardCornerRadius="28dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="#0F172A">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ai_card_gradient"
+                        android:orientation="vertical"
+                        android:padding="28dp">
+
+                        <!-- AI HEADER -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="✨"
+                                android:textSize="20sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:text="Neural AI Önerisi"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp"
+                                android:fontFamily="sans-serif-black"/>
+
+                        </LinearLayout>
+
+                        <!-- AI CONTENT -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Veri Yapıları dersin için bağlı listeler konusuna %18 daha fazla çalış. Geçen ders notlarında bu konuda zayıf kaldın."
+                            android:textColor="#CBD5E1"
+                            android:textSize="14sp"
+                            android:lineSpacingExtra="6dp"/>
+
+                        <!-- AI TAGS -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.chip.Chip
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="12dp"
+                                android:text="💡 Akıllı Analiz"
+                                android:textColor="#E2E8F0"
+                                app:chipBackgroundColor="#475569"
+                                app:chipCornerRadius="12dp"
+                                android:textSize="12sp"/>
+
+                            <com.google.android.material.chip.Chip
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="📚 Not Özeti"
+                                android:textColor="#E2E8F0"
+                                app:chipBackgroundColor="#475569"
+                                app:chipCornerRadius="12dp"
+                                android:textSize="12sp"/>
+
+                        </LinearLayout>
+
+                        <!-- AI BUTTON -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAiNote"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_marginTop="24dp"
+                            android:text="AI Not Analizi"
+                            app:backgroundTint="#FFFFFF"
+                            app:cornerRadius="20dp"
+                            app:icon="@drawable/ic_ai_brain"
+                            app:iconTint="#4F46E5"
+                            app:iconSize="20dp"
+                            app:iconGravity="start"
+                            app:iconPadding="12dp"
+                            android:textColor="#4F46E5"
+                            android:textSize="16sp"
+                            android:fontFamily="sans-serif-bold"/>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- TODAY SCHEDULE HEADER -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:text="📅 Bugünkü Program"
+                        android:textColor="#0F172A"
+                        android:textSize="20sp"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="-0.01"/>
+
+                    <!-- YENİ DERS EKLEME BUTONU -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAddNewLesson"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="+ Ekle"
+                        android:textColor="#4F46E5"
+                        android:fontFamily="sans-serif-bold"
+                        android:textSize="14sp"
+                        app:icon="@android:drawable/ic_input_add"
+                        app:iconTint="#4F46E5" />
+                </RelativeLayout>
+
+                <!-- DİNAMİK PLATINUM PENCERE (Fixed Height Scrollable) -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    app:cardCornerRadius="32dp"
+                    app:cardElevation="8dp"
+                    app:strokeColor="#F1F5F9"
+                    app:strokeWidth="1dp"
+                    app:cardBackgroundColor="#FFFFFF">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!-- DİNAMİK LİSTE (RecyclerView) -->
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvTodaySchedule"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clipToPadding="false"
+                            android:paddingVertical="12dp"
+                            android:overScrollMode="never"
+                            tools:listitem="@layout/item_lesson_card" />
+
+                        <!-- BOŞ DURUM EKRANI (Ders Yoksa Görünecek) -->
+                        <LinearLayout
+                            android:id="@+id/layoutNoLesson"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="32dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:src="@android:drawable/ic_menu_today"
+                                android:alpha="0.2"
+                                app:tint="#64748B" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="Bugün başka dersin yok."
+                                android:textColor="#94A3B8"
+                                android:textSize="14sp"
+                                android:fontFamily="sans-serif-medium" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+                <!-- UTILITY BUTTONS -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36dp"
+                    android:orientation="vertical">
+
+                    <!-- 1. DERS ANALİZ GEÇMİŞİ (Canlı Altyazı Tasarımıyla Eşitlendi) -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnViewProjects"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="8dp"
+                        app:strokeColor="#E2E8F0"
+                        app:strokeWidth="1dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="24dp">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@android:drawable/ic_menu_agenda"
+                                app:tint="#4F46E5"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:text="Ders Analiz Geçmişi"
+                                android:textColor="#0F172A"
+                                android:textSize="16sp"
+                                android:fontFamily="sans-serif-medium"/>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1"/>
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/ic_chevron_right"
+                                app:tint="#94A3B8"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- 2. CANLI ALTYAZILAR (Referans Alınan Tasarım) -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnOpenSubtitles"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="8dp"
+                        app:strokeColor="#E2E8F0"
+                        app:strokeWidth="1dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="24dp">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_subtitles"
+                                app:tint="#4F46E5"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:text="Canlı Altyazılar"
+                                android:textColor="#0F172A"
+                                android:textSize="16sp"
+                                android:fontFamily="sans-serif-medium"/>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1"/>
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/ic_chevron_right"
+                                app:tint="#94A3B8"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- BOTTOM NAVIGATION BAR -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginBottom="32dp"
+            app:cardCornerRadius="48dp"
+            app:cardElevation="28dp"
+            app:cardBackgroundColor="#F8FAFC">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="20dp">
+
+                <!-- NAV BUTTONS -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!-- HOME -->
+                    <ImageButton
+                        android:id="@+id/btnHome"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_home"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        app:tint="#4F46E5"/>
+
+                    <!-- activity_student.xml içindeki ilgili ImageButton -->
+                    <ImageButton
+                    android:id="@+id/btnGames"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_games"
+                    android:padding="12dp"
+                    android:scaleType="fitCenter"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    app:tint="#64748B"/>
+
+                    <!-- SPACER -->
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.5"/>
+
+                    <!-- SCHEDULE -->
+                    <ImageButton
+                        android:id="@+id/btnSchedule"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_calendar"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        app:tint="#64748B"/>
+
+                    <ImageButton
+                        android:id="@+id/btnDownloadToolbar"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_toStartOf="@id/btnOpenMenu"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="12dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_download"
+                        app:tint="#0F172A"
+                        android:padding="8dp" />
+
+                </LinearLayout>
+
+                <!-- FAB MIC -->
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabMic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/ic_mic_fab"
+                    app:backgroundTint="#4F46E5"
+                    app:tint="#FFFFFF"
+                    app:elevation="16dp"
+                    app:fabSize="normal"
+                    app:borderWidth="0dp"
+                    app:maxImageSize="28dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- CONNECTION STATUS BAR -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSubtitles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="120dp"
+            android:visibility="gone"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp"
+            app:strokeColor="#10B981"
+            app:strokeWidth="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_live_dot"
+                    app:tint="#10B981"/>
+
+                <TextView
+                    android:id="@+id/txtLiveSubtitles"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:text="Canlı altyazı burada görünecek..."
+                    android:textColor="#0F172A"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:maxLines="2"
+                    android:ellipsize="end"/>
+
+                <ImageView
+                    android:id="@+id/btnCloseSubtitles"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_close"
+                    app:tint="#64748B"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <!-- ... (Dosyanın üst kısımları, CoordinatorLayout ve NestedScrollView aynı kalıyor) ... -->
+
+    <!-- RIGHT DRAWER MENU (Sadece Sistem Seçenekleri Kaldı) -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:fitsSystemWindows="true"
+        android:background="@drawable/menu_bg_gradient">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- MENU HEADER (Profil Bilgileri) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="32dp"
+                android:background="@drawable/menu_header_gradient">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    app:cardCornerRadius="36dp"
+                    app:cardBackgroundColor="#F1F5F9"
+                    app:elevation="12dp">
+                    <ImageView
+                        android:id="@+id/imgNavAvatar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_student_default"/>
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/txtStudentName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Öğrenci Adı"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-black"/>
+
+                <TextView
+                    android:id="@+id/txtStudentDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Bölüm | No"
+                    android:textColor="#CBD5E1"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-medium"/>
+            </LinearLayout>
+
+            <!-- SİSTEM SEÇENEKLERİ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="32dp"
+                    android:paddingVertical="20dp"
+                    android:text="⚙️ SİSTEM"
+                    android:textColor="#64748B"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="0.1"/>
+
+                <!-- HISTORY -->
+                <LinearLayout
+                    android:id="@+id/btnOpenHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="32dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_history"
+                        app:tint="#64748B"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="Ders Geçmişi"
+                        android:textColor="#0F172A"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+
+                <!-- SETTINGS -->
+                <LinearLayout
+                    android:id="@+id/btnSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="32dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_settings"
+                        app:tint="#64748B"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="Ayarlar"
+                        android:textColor="#0F172A"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-medium"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>

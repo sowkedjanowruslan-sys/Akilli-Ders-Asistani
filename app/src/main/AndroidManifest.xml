@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+        </intent>
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+    </queries>
+    <!-- İzinler -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
+
+    <application
+        android:enableOnBackInvokedCallback="true"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Akıllı Ders Asistanı"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true"
+        tools:targetApi="34"
+        android:largeHeap="true"
+        android:theme="@style/Theme.AkilliDersAsistani">
+
+        <property
+            android:name="android.content.PROPERTY_ATTRIBUTION_TAG_NAMES"
+            android:value="AkilliDersAsistani;MediaPlayer;Firebase" />
+        <property
+            android:name="android.view.PROPERTY_ALLOW_ATTRIBUTION_TAGS"
+            android:value="true" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <receiver
+            android:name=".AlarmReceiver"
+            android:enabled="true"
+            android:exported="false" />
+        <activity
+            android:name=".AddLessonActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <receiver
+            android:name=".BootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".SplashActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MemoryPlayActivity" android:exported="false" />
+        <activity android:name=".MemoryMatchActivity" android:exported="false" />
+        <activity
+            android:name=".FocusMatrixActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AkilliDersAsistani" />
+        <!-- 2. ANA SAYFA (LAUNCHER filtresi kaldırıldı, Splash üzerinden açılacak) -->
+        <activity android:name=".MainActivity" android:exported="true" />
+
+        <!-- 3. EĞİTMEN KAYIT SİSTEMİ -->
+        <activity android:name=".TeacherRegisterActivity" android:screenOrientation="portrait" />
+        <activity
+            android:name=".MathLeaderboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AkilliDersAsistani" />
+        <!-- 4. EĞİTMEN PROFİL SAYFASI -->
+        <activity android:name=".TeacherProfileActivity" android:screenOrientation="portrait" />
+
+        <!-- 5. EĞİTMEN ANA PANELİ -->
+        <activity android:name=".TeacherActivity" android:screenOrientation="portrait" />
+        <activity android:name=".FocusPlayActivity" android:exported="false" />
+        <activity android:name=".FocusGameActivity" android:exported="false" />
+        <receiver android:name=".AlarmReceiver" android:enabled="true" android:exported="false" />
+
+        <!-- 6. ŞİFRE DEĞİŞTİRME SAYFASI -->
+        <activity android:name=".TeacherChangePasswordActivity" android:screenOrientation="portrait" />
+        <activity android:name=".LessonReportActivity" />
+        <activity android:name=".LessonHistoryActivity" />
+        <activity
+            android:name=".AudioRecordingActivity"    android:screenOrientation="portrait"
+            android:theme="@style/Theme.AkilliDersAsistani" />
+        <activity android:name=".MathGameActivity" />
+        <activity android:name=".MathPlayActivity" />
+        <activity android:name=".StudentProfileActivity" android:screenOrientation="portrait" />
+        <activity
+            android:name=".StudentActivity"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+            android:exported="false" />
+    </application>
+</manifest>

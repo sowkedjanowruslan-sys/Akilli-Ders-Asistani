@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    AKILLI DERS ASISTANI - ULTRA PREMIUM USAGE GUIDE v18
+    DESIGN SYSTEM: APPLE iOS 18 PLATINUM GLASS
+    NEURAL STUDIO - MASTERCLASS REHBERİ
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:cardCornerRadius="42dp"
+    app:cardElevation="32dp"
+    app:strokeWidth="1.2dp"
+    app:strokeColor="#E5E5EA"
+    android:backgroundTint="#F2F2F7">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="680dp"
+        android:orientation="vertical">
+
+        <!-- HEADER: IOS GRABBER -->
+        <View
+            android:layout_width="40dp"
+            android:layout_height="5dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="14dp"
+            android:background="#C7C7CC"
+            android:alpha="0.6" />
+
+        <!-- TITLES -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="32dp"
+            android:paddingTop="28dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Platinum Rehber"
+                android:textColor="#5856D6"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.15"
+                android:textAllCaps="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sistem Kılavuzu"
+                android:textColor="#1C1C1E"
+                android:textSize="32sp"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="-0.04" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Eğitim teknolojilerinde yeni nesil yapay zeka deneyimini keşfedin."
+                android:textColor="#8E8E93"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-medium" />
+        </LinearLayout>
+
+        <!-- MODE SELECTOR (SEGMENTED CONTROL) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginVertical="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            android:backgroundTint="#E3E3E8">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="3dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/tabTeacher"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Eğitmen Modu"
+                    android:textColor="#1C1C1E"
+                    android:fontFamily="sans-serif-bold"
+                    android:textAllCaps="false"
+                    app:backgroundTint="#FFFFFF"
+                    app:cornerRadius="13dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/tabStudent"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Öğrenci Modu"
+                    android:textColor="#8E8E93"
+                    android:fontFamily="sans-serif-medium"
+                    android:textAllCaps="false"
+                    app:cornerRadius="13dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- MAIN CONTENT SCROLL -->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="24dp">
+
+                <!-- INTRO CARD -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="0dp"
+                    android:backgroundTint="#FFFFFF"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#E5E5EA">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🚀 Uygulama Nedir?"
+                            android:textColor="#1C1C1E"
+                            android:fontFamily="sans-serif-bold"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Akıllı Ders Asistanı, eğitmenler ve öğrenciler arasındaki bilişsel bağı güçlendiren, ders verimliliğini yapay zeka (AI) ile maksimize eden bir ekosistemdir. Anonimlik prensibiyle çalışarak çekingenliği ortadan kaldırır."
+                            android:textColor="#3A3A3C"
+                            android:textSize="14sp"
+                            android:lineSpacingExtra="5dp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- SECTION: EĞİTMEN DETAYLARI -->
+                <LinearLayout
+                    android:id="@+id/guideContentTeacher"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:text="EĞİTMEN MASTERCLASS"
+                        android:textColor="#8E8E93"
+                        android:textSize="11sp"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="0.1" />
+
+                    <include layout="@layout/item_guide_row"
+                        tools:textTitle="1. Neural Oturum Yönetimi"
+                        tools:textDesc="Kurum ve ders bilgisini girerek saniyeler içinde benzersiz bir ders kodu oluşturun. Bu kod, öğrencilerin 'Neural Match' teknolojisiyle size bağlanmasını sağlar." />
+
+                    <include layout="@layout/item_guide_row"
+                        tools:textTitle="2. Bilişsel Isı Haritası"
+                        tools:textDesc="Öğrencilerden gelen 'Anlamadım', 'Yavaşla' veya 'Hızlan' sinyallerini anlık grafiklerde görün. Sınıfın ortalama anlama seviyesini gerçek zamanlı takip edin." />
+
+                    <include layout="@layout/item_guide_row"
+                        tools:textTitle="3. AI Otomatik Raporlama"
+                        tools:textDesc="Ders bittiğinde yapay zeka dersin özetini çıkartır, en kritik anları belirler ve Arşiv'e kaydeder. Elle not tutma devrini sona erdirin." />
+ </LinearLayout>
+
+                <!-- SECTION: ÖĞRENCİ DETAYLARI -->
+                <LinearLayout
+                    android:id="@+id/guideContentStudent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:text="ÖĞRENCİ DENEYİMİ"
+                        android:textColor="#8E8E93"
+                        android:textSize="11sp"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="0.1" />
+
+                    <include layout="@layout/item_guide_row"
+                        tools:textTitle="1. %100 Anonim Katılım"
+                        tools:textDesc="İsminiz veya numaranız asla paylaşılmaz. Soru sormaktan veya dersin hızını eleştirmekten çekinmeyin. Kimliğiniz sistemin koruması altındadır." />
+
+                    <include layout="@layout/item_guide_row"
+                        tools:textTitle="2. İnteraktif Müdahale"
+                        tools:textDesc="Ders hızını beğenmediğinizde veya bir kavramı anlamadığınızda tek dokunuşla bildirin. Eğitmeniniz bu uyarıyı kümülatif bir veri olarak görür." />
+
+                    <include layout="@layout/item_guide_row"
+                        tools:textTitle="3. Akıllı Arşiv Sistemi"
+                        tools:textDesc="Katıldığınız tüm derslerin AI tarafından hazırlanmış özetlerine ve anahtar kelimelerine istediğiniz an geçmişten ulaşabilirsiniz." />
+ </LinearLayout>
+
+                <!-- SECTION: KİMLER KULLANABİLİR? -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="KULLANIM KAPSAMI"
+                    android:textColor="#8E8E93"
+                    android:textSize="11sp"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="0.1" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="32dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="0dp"
+                    android:backgroundTint="#F8F9FF"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#D1D1D6">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:text="• Üniversite amfilerinde büyük gruplar için.\n• Kurs ve etüt merkezlerinde birebir takip için.\n• Online derslerde dikkat yönetimi için.\n• Kurumsal eğitimlerde verimlilik ölçümü için."
+                        android:textColor="#1C1C1E"
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="8dp"
+                        android:fontFamily="sans-serif-medium" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- FOOTER: START ACTION -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:background="#F2F2F7">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGuideFinish"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:text="Deneyimi Başlat"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-black"
+                app:cornerRadius="22dp"
+                android:backgroundTint="#007AFF"
+                app:elevation="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Neural Studio Platinum © 2024"
+                android:textColor="#C7C7CC"
+                android:textSize="10sp"
+                android:letterSpacing="0.1" />
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

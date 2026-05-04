@@ -1,0 +1,9 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item><shape android:shape="oval">
+            <solid android:color="#EFF6FF" /> <!-- Çok açık mavi -->
+        </shape>
+    </item>
+    <item android:drawable="@android:drawable/ic_menu_edit" 
+          android:top="10dp" android:bottom="10dp" 
+          android:left="10dp" android:right="10dp" />
+</layer-list>

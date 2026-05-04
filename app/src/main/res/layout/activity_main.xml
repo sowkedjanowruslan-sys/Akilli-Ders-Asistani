@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FE">
+
+    <!-- KATMAN 0: PROJENİN İMZASI OLAN GLOW EFEKTLERİ -->
+    <include layout="@layout/ambient_background_layers" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="32dp">
+
+        <!-- BRAND LOGO: Neural Studio Stili -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardWelcomeLogo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="60dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="12dp"
+            app:strokeWidth="1.5dp"
+            app:strokeColor="#A5B4FC"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="N"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/brand_gradient"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="36sp"
+                android:fontFamily="sans-serif-black"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ORTA KISIM: TYPOGRAPHY -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/cardWelcomeLogo"
+            app:layout_constraintBottom_toTopOf="@+id/layoutBottomActions">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:letterSpacing="-0.04"
+                android:text="Yeni Nesil\nEğitim Deneyimi"
+                android:textColor="#0F172A"
+                android:textSize="38sp"
+                android:lineHeight="42sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="Akıllı Ders Asistanı ile sınıf içi etkileşimi\nprofesyonel seviyeye taşıyın."
+                android:textColor="#64748B"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium" />
+
+            <TextView
+                android:id="@+id/txtLoginLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Zaten hesabım var, Oturum Aç"
+                android:textColor="#4F46E5"
+                android:textSize="15sp"
+                android:background="?attr/selectableItemBackground"
+                android:padding="8dp"/>
+        </LinearLayout>
+
+        <!-- ALT KISIM: AKSİYONLAR -->
+        <LinearLayout
+            android:id="@+id/layoutBottomActions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNext"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_marginBottom="24dp"
+                android:backgroundTint="#4F46E5"
+                android:fontFamily="sans-serif-black"
+                android:text="Hadi Başlayalım"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                app:cornerRadius="24dp"
+                app:elevation="8dp"
+                app:icon="@android:drawable/ic_media_play"
+                app:iconGravity="textEnd"
+                app:iconPadding="12dp" />
+
+            <TextView
+                android:id="@+id/txtPrivacy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Devam ederek Gizlilik Şartlarını kabul etmiş olursunuz."
+                android:textColor="#94A3B8"
+                android:textSize="11sp"
+                android:alpha="0.8" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

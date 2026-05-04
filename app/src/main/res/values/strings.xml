@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="status_booting">SİSTEM GÜVENLİĞİ VE AI SENKRONİZASYONU</string>
+    <string name="main_welcome_user">Merhaba 👋</string>
+    <string name="desc_student_avatar">Öğrenci Profil Resmi</string>
+    <string name="desc_session_icon">Oturum Simgesi</string>
+    <string name="main_section_modes">Eğitim Modları</string>
+    <string name="desc_teacher_profile">Eğitmen Profili</string>
+    <string name="main_teacher_title">Eğitmen Paneli</string>
+    <string name="main_teacher_desc">Ders içerikleri hazırlayın ve öğrenci ilerlemesini takip edin.</string>
+    <string name="app_name">Akıllı Ders Asistanı</string>
+    <string name="app_name_main">AKILLI DERS\nASİSTANI</string>
+    <string name="placeholder_question">?</string>
+    <string name="splash_smart_prefix">SMART</string>
+    <string name="splash_tagline">Yapay Zeka Destekli Yeni Nesil Eğitim</string>
+    <string name="badge_platinum">PLATINUM VERSİYON</string>
+    <string name="footer_standards">Designed in Apple Standards</string>
+
+    <string name="desc_back">Geri Dön</string>
+    <string name="main_student_title">Öğrenci Paneli</string>
+    <string name="main_student_desc">Kişisel müfredatınıza odaklanın ve hedeflerinize ulaşın.</string>
+    <string name="desc_language_btn">Dili Değiştir</string>
+    <string name="select_language">Dil / Lang</string>
+    <string name="guide_title">Kılavuz</string>
+    <string name="main_voice_assistant">Sesli Asistan Sistemi</string>
+    <string name="msg_voice_active">Sesli komutlar dinleniyor...</string>
+    <string name="desc_history_icon">Geçmiş Dosyalar Simgesi</string>
+    <string name="stat_lessons">DOSYA ARŞİVİM</string>
+    <string name="stat_completed_lessons"> Ders Raporu</string>
+    <string name="btn_exit">GÜVENLİ ÇIKIŞ YAP</string>
+    <string name="desc_profile_photo">Profil Fotoğrafı</string>
+    <string name="welcome_back">Tekrar Hoş Geldin</string>
+    <string name="student_name_default">Öğrenci Adı</string>
+    <string name="anonymous_mode">Gizli Mod</string>
+    <string name="voice_notifications">Sesli Bildirimler</string>
+    <string name="student_panel">ÖĞRENCİ PANELİ</string>
+    <string name="enter_code_hint">8 Haneli Kodu Girin</string>
+    <string name="btn_join">DERSE KATIL</string>
+
+    <string name="btn_understood">ANLADIM</string>
+    <string name="btn_repeat">TEKRAR İSTE</string>
+    <string name="btn_not_understood">ANLAMADIM</string>
+    <string name="btn_back">Geri</string>
+    <string name="teacher_greeting">Merhaba, \nProf. Dr. Ahmet</string>
+    <string name="teacher_panel">EĞİTMEN YÖNETİM MERKEZİ</string>
+    <string name="teacher_control_panel">KONTROL PANELİ</string>
+    <string name="desc_back_button">Geri Dön</string>
+    <string name="label_live_subtitles">Canlı Altyazı</string>
+    <string name="session_code_label">AKTİF OTURUM KODU</string>
+    <string name="status_live">● CANLI</string>
+    <string name="default_session_code">0000000</string>
+
+    <string name="btn_update_profile">Profili Güncelle</string>
+    <string name="btn_delete_account">Hesabı Kalıcı Olarak Sil</string>
+    <string name="footer_encryption_info">Uçtan uca şifreli terminal.</string>
+    <string name="btn_new_session">Yeni Ders</string>
+    <string name="btn_reconnect">Yenile</string>
+    <string name="guide_feature_title_placeholder">Özellik Başlığı</string>
+    <string name="guide_feature_desc_placeholder">Bu özelliğin açıklaması burada yer alacak.</string>
+    <string name="desc_camera_icon">Kamera Simgesi</string>
+    <string name="student_id_default">Öğrenci No</string>
+    <string name="stat_attendance_rate">%0</string>
+    <string name="stat_attendance">Katılım</string>
+    <string name="stat_feedback_count">0</string>
+    <string name="stat_feedback">Geri Bildirim</string>
+    <string name="label_id_info">Kimlik Bilgileri</string>
+    <string name="hint_full_name">Tam Ad Soyad</string>
+    <string name="hint_student_no">Öğrenci Numarası</string>
+    <string name="hint_dept">Bölüm / Fakülte</string>
+    <string name="label_gender">Cinsiyet</string>
+    <string name="gender_male">Erkek</string>
+    <string name="gender_female">Kadın</string>
+
+    <string name="label_live_analytics">CANLI VERİ ANALİZİ</string>>
+    <string name="label_lock_interactions">Etkileşimi Kilitle</string>
+    <string name="label_feedback_stream">ÖĞRENCİ GERİ BİLDİRİMLERİ</string>
+
+    <string name="btn_get_report">Ders Raporunu İndir (.pdf)</string>
+    <string name="btn_start_broadcast">Yayını Başlat</string>
+    <string name="stat_students_count">42</string>
+    <string name="label_students">Toplam Öğrenci</string>
+    <string name="stat_lesson_count">128</string>
+    <string name="label_courses">Toplam Ders</string>
+
+
+    <string name="status_waiting_connection">DERS BAĞLANTISI BEKLENİYOR</string>
+    <string name="label_send_feedback">GERİ BİLDİRİM GÖNDER</string>
+    <string name="btn_emergency">🚨 ACİL DURUM BİLDİR</string>
+    <string name="btn_add_detail">DETAY EKLE</string>
+    <string-array name="gunler_array">
+        <item>Pazartesi</item>
+        <item>Salı</item>
+        <item>Çarşamba</item>
+        <item>Perşembe</item>
+        <item>Cuma</item>
+        <item>Cumartesi</item>
+        <item>Pazar</item>
+    </string-array>
+
+</resources>

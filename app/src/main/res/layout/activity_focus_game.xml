@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    NEURAL STUDIO PREMIUM RANKINGS & STAGES
+    Design: Apple iOS 17 / Glassmorphism Concept
+    Focus: Depth, Parallax, and Fluidity
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F7">
+
+    <!-- ARKA PLAN GLOW KATMANLARI -->
+    <include layout="@layout/ambient_background_layers" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="340dp"
+                android:paddingTop="60dp"
+                app:layout_collapseMode="parallax">
+
+                <!-- HEADER TITLE -->
+                <TextView
+                    android:id="@+id/txtHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="0.1"
+                    android:text="RANKINGS &amp; STAGES"
+                    android:textColor="#1C1C1E"
+                    android:textSize="15sp"
+                    android:alpha="0.6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- PODYUM MERKEZ (1. SIRA - ALTIN) -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/containerRank1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtHeader">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardRank1"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        app:cardCornerRadius="55dp"
+                        app:cardElevation="12dp"
+                        app:strokeColor="#FFD60A"
+                        app:strokeWidth="4dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <ImageView
+                            android:id="@+id/imgRank1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_student_default" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Rank Badge -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        app:cardBackgroundColor="#FFD60A"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="14dp"
+                        android:layout_marginBottom="-4dp"
+                        app:layout_constraintBottom_toBottomOf="@id/cardRank1"
+                        app:layout_constraintEnd_toEndOf="@id/cardRank1"
+                        app:layout_constraintStart_toStartOf="@id/cardRank1">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="1"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:fontFamily="sans-serif-black" />
+                    </com.google.android.material.card.MaterialCardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- 2. SIRA (GÜMÜŞ - SOL) -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/containerRank2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="-20dp"
+                    app:layout_constraintBottom_toBottomOf="@id/containerRank1"
+                    app:layout_constraintEnd_toStartOf="@id/containerRank1"
+                    android:alpha="0.85">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardRank2"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:cardCornerRadius="40dp"
+                        app:cardElevation="6dp"
+                        app:strokeColor="#C0C0C2"
+                        app:strokeWidth="2dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <ImageView
+                            android:id="@+id/imgRank2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_student_default" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        app:cardBackgroundColor="#C0C0C2"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="8dp"
+                        app:layout_constraintBottom_toBottomOf="@id/cardRank2"
+                        app:layout_constraintEnd_toEndOf="@id/cardRank2"
+                        app:layout_constraintStart_toStartOf="@id/cardRank2">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="2"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"
+                            android:fontFamily="sans-serif-black" />
+                    </com.google.android.material.card.MaterialCardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- 3. SIRA (BRONZ - SAĞ) -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/containerRank3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-20dp"
+                    app:layout_constraintBottom_toBottomOf="@id/containerRank1"
+                    app:layout_constraintStart_toEndOf="@id/containerRank1"
+                    android:alpha="0.85">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardRank3"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:cardCornerRadius="40dp"
+                        app:cardElevation="6dp"
+                        app:strokeColor="#CD7F32"
+                        app:strokeWidth="2dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <ImageView
+                            android:id="@+id/imgRank3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_student_default" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        app:cardBackgroundColor="#CD7F32"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="8dp"
+                        app:layout_constraintBottom_toBottomOf="@id/cardRank3"
+                        app:layout_constraintEnd_toEndOf="@id/cardRank3"
+                        app:layout_constraintStart_toStartOf="@id/cardRank3">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="3"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"
+                            android:fontFamily="sans-serif-black" />
+                    </com.google.android.material.card.MaterialCardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- GLASS PODIUM BASE (CAM EFEKTLİ TABAN) -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="280dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="-40dp"
+                    app:cardBackgroundColor="#40FFFFFF"
+                    app:cardCornerRadius="40dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#80FFFFFF"
+                    app:strokeWidth="1dp"
+                    app:layout_constraintTop_toBottomOf="@id/containerRank1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_ios_glass_gradient"
+                        android:alpha="0.1" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFocusLevels"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:padding="20dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/item_math_level" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

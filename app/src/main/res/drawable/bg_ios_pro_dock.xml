@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#E6FFFFFF" /> <!-- %90 Şeffaf Beyaz (Glass) -->
+    <corners android:radius="45dp" />
+    <stroke android:width="1.2dp" android:color="#33000000" /> <!-- Çok ince siyah sınır -->
+</shape>

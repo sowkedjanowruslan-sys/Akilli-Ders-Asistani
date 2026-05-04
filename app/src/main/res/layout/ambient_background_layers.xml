@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    AKILLI DERS ASISTANI - REUSABLE AMBIENT LIGHTING SYSTEM
+    Bu dosya tüm oyunların arka plan ışıklarını tek merkezden yönetir.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:importantForAccessibility="no">
+
+    <!-- Mor Safir Işıltı (Üst Sağ) -->
+    <View
+        android:id="@+id/glowPurple"
+        android:layout_width="600dp"
+        android:layout_height="600dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="-300dp"
+        android:layout_marginEnd="-200dp"
+        android:alpha="0.18"
+        android:background="@drawable/bg_ios_ambient_glow"
+        android:backgroundTint="#5856D6" />
+
+    <!-- Mavi Okyanus Işıltı (Orta Sol) -->
+    <View
+        android:id="@+id/glowBlue"
+        android:layout_width="450dp"
+        android:layout_height="450dp"
+        android:layout_gravity="center_vertical|start"
+        android:layout_marginStart="-200dp"
+        android:alpha="0.12"
+        android:background="@drawable/bg_ios_ambient_glow"
+        android:backgroundTint="#007AFF" />
+
+    <!-- Zümrüt Yeşili Işıltı (Alt Sağ) -->
+    <View
+        android:id="@+id/glowEmerald"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="-200dp"
+        android:layout_marginEnd="-100dp"
+        android:alpha="0.10"
+        android:background="@drawable/bg_ios_ambient_glow"
+        android:backgroundTint="#34C759" />
+
+</FrameLayout>

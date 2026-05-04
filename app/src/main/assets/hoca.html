@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Hoca</title>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+canvas{
+  background:#0f172a;
+  border-radius:14px;
+  padding:10px;
+}
+
+body{font-family:Arial;background:#edf1f5;text-align:center}
+.card{background:#fff;padding:20px;margin:30px auto;max-width:650px;border-radius:15px}
+button{padding:10px 20px;margin:5px}
+.bildirim{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:#222;
+  color:#fff;
+  padding:15px 20px;
+  border-radius:12px;
+  font-size:16px;
+  display:none;
+  z-index:999;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+.bildirim.kirmizi{background:#e74c3c}
+.bildirim.sari{background:#f1c40f;color:#000}
+.bildirim.mavi{background:#3498db}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>👨‍🏫 Öğretmen Paneli</h2>
+  <button onclick="dersBaslat()">Dersi Başlat</button>
+
+  <h3>Kod: <span id="kod">-</span></h3>
+  <h3>👥 Öğrenci: <span id="sayi">0</span></h3>
+<h2>Katılan Öğrenci Sayısı: <span id="sayi">0</span></h2>
+<div id="bildirim" class="bildirim"></div>
+
+  <input id="mesaj" placeholder="Öğrenciye Bildirim">
+  <button onclick="bildirimGonder()">Gönder</button>
+
+  <canvas id="grafik"></canvas>
+</div>
+<div id="liste"></div>
+
+
+</body>
+<script type="module">
+  import { getDatabase, ref, onChildAdded, set }
+from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+
+import { getDatabase, ref, set }
+from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+
+
+window.bildirimGonder = function(metin){
+  set(ref(db,"notifications/"+Date.now()),{
+    text: metin
+  });
+}
+let sonHareket = Date.now();
+let normalBasildi = false;
+
+/* Öğrenciden yeni geri bildirim gelirse */
+onChildAdded(ref(db,"feedbacks"), (snap)=>{
+  sonHareket = Date.now();
+  normalBasildi = false;
+});
+
+/* Her 1 dakikada kontrol */
+setInterval(()=>{
+  const simdi = Date.now();
+  const fark = simdi - sonHareket;
+
+  if(fark >= 5 * 60 * 1000 && !normalBasildi){
+    normalBasildi = true;
+
+    set(ref(db,"feedbacks/"+Date.now()),{
+      type:"normal"
+    });
+
+    console.log("5 dk hareket yok → DURUM NORMAL");
+  }
+},60*1000);
+  import { initializeApp }
+from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+import { getDatabase, ref, onChildAdded }
+from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+
+const app = initializeApp({
+  apiKey:"XXXX",
+  databaseURL:"XXXX"
+});
+
+const db = getDatabase(app);
+
+let x=0;
+
+const ctx = document.getElementById("grafik");
+
+const chart = new Chart(ctx,{
+  type:"line",
+  data:{
+    labels:[],
+    datasets:[]
+  }
+});
+
+function yeniCizgi(renk){
+  return {
+    data:[],
+    borderColor:renk,
+    fill:false,
+    tension:0
+  };
+}
+
+const map = {
+  anlamadim: yeniCizgi("red"),
+  tekrar: yeniCizgi("orange"),
+  anladim: yeniCizgi("blue"),
+  normal: yeniCizgi("green")
+};
+
+onChildAdded(ref(db,"feedbacks"), (snap)=>{
+  x++;
+  chart.data.labels.push(x);
+
+  const t = snap.val().type;
+  Object.values(map).forEach(d=>d.data.push(null));
+
+  map[t].data[x-1]=1;
+
+  chart.data.datasets = Object.values(map);
+  chart.update();
+});
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+import {
+  getDatabase, ref, onValue
+}
+from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+
+
+const sayiText = document.getElementById("sayi");
+
+onValue(ref(db,"onlineUsers"), (snap)=>{
+  if(!snap.exists()){
+    sayiText.innerText = "0";
+    return;
+  }
+  sayiText.innerText = Object.keys(snap.val()).length;
+});
+</script>
+
+
+</html>

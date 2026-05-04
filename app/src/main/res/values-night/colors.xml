@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- iOS Dark Mode Base Colors -->
+    <color name="ios_bg_system">#000000</color>
+    <color name="ios_bg_white">#000000</color> <!-- Gece modunda siyah arka plan -->
+    <color name="ios_card_white">#1C1C1E</color>
+    <color name="ios_card_pure">#1C1C1E</color> <!-- Kartlar koyu gri -->
+
+    <color name="ios_text_primary">#FFFFFF</color>
+    <color name="ios_text_secondary">#8E8E93</color>
+    <color name="ios_text_title">#F2F2F7</color>
+    <color name="ios_text_body">#AEAEB2</color>
+
+    <color name="ios_blue">#0A84FF</color> <!-- Dark mode canlı mavisi -->
+    <color name="ios_green">#30D158</color>
+    <color name="ios_red">#FF453A</color>
+    <color name="ios_indigo">#5E5CE6</color>
+    <color name="ios_separator">#54545866</color>
+
+    <!-- Gece modu için cam efekti (Daha koyu yarı saydam) -->
+    <color name="ios_glass_effect">#CC1C1C1E</color>
+    <color name="progress_glow_color">#4D5E5CE6</color>
+
+    <!-- NEUTRAL STUDIO - DARK THEME -->
+    <color name="ns_background">#000000</color>
+    <color name="ns_surface">#1C1C1E</color>
+    <color name="ns_text_primary">#FFFFFF</color>
+    <color name="ns_text_secondary">#8E8E93</color>
+    <color name="ns_accent">#FFFFFF</color>
+    <color name="ns_glass_stroke">#1AFFFFFF</color>
+    <color name="ns_gold">#FFD60A</color> <!-- Gece modunda daha parlak altın -->
+
+    <!-- Ekstra Tanımlar (Hata Almamak İçin) -->
+    <color name="white">#000000</color> <!-- Karanlık modda beyazları siyaha çekebilirsin -->
+    <color name="black">#FFFFFF</color>
+</resources>

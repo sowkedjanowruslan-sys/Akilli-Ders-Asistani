@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- DIŞ YUMUŞAK GÖLGE (Depth) -->
+    <item android:top="4dp" android:left="4dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="18dp" />
+            <solid android:color="#1A000000" />
+        </shape>
+    </item>
+
+    <!-- ANA GÖVDE (Görseldeki o koyu lacivert temel) -->
+    <item android:bottom="3dp" android:right="3dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="18dp" />
+            <solid android:color="#1B1B4B" />
+        </shape>
+    </item>
+
+    <!-- O KRİTİK 1PX YEŞİLİMSİ/AÇIK MAVİ VURGU (Border-Bottom ve Border-Right Işığı) -->
+    <item android:top="1dp" android:left="1dp" android:bottom="1dp" android:right="1dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="18dp" />
+            <stroke android:width="1.2dp" android:color="#A0D0C0" />
+        </shape>
+    </item>
+
+    <!-- ÜST YÜZEY GRADYAN (Görseldeki renk geçişi) -->
+    <item android:bottom="4dp" android:right="4dp" android:top="1dp" android:left="1dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="17dp" />
+            <gradient
+                android:startColor="#4141A5"
+                android:endColor="#1B1B4B"
+                android:angle="270" />
+        </shape>
+    </item>
+</layer-list>

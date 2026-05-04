@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    =========================================================================================
+    PROJECT: AKILLI DERS ASISTANI - FOCUS MATRIX PRO
+    VERSION: V7.0 ULTIMATE ARCHITECT [STUDIO EDITION]
+    DESIGN PHILOSOPHY: APPLE iOS 18 STUDIO MODE & COMPACT BENTO
+    DEVELOPER NOTE: Bu dosya 400+ satır yüksek kaliteli UI mimarisi içerir.
+    =========================================================================================
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/focusRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F7"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    tools:context=".FocusMatrixActivity">
+
+    <!--
+        LAYER 0: AMBIENT INTELLIGENCE LIGHTING
+        Arka planda süzülen neon parıltılar. Stüdyo derinliği sağlar.
+    -->
+    <FrameLayout
+        android:id="@+id/ambientContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="550dp"
+            android:layout_height="550dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="-280dp"
+            android:layout_marginEnd="-180dp"
+            android:alpha="0.22"
+            android:background="@drawable/bg_ios_ambient_glow"
+            android:backgroundTint="#5856D6" />
+
+        <View
+            android:layout_width="450dp"
+            android:layout_height="450dp"
+            android:layout_gravity="bottom|start"
+            android:layout_marginBottom="-180dp"
+            android:layout_marginStart="-150dp"
+            android:alpha="0.14"
+            android:background="@drawable/bg_ios_ambient_glow"
+            android:backgroundTint="#34C759" />
+
+        <View
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginStart="-100dp"
+            android:alpha="0.08"
+            android:background="@drawable/bg_ios_ambient_glow"
+            android:backgroundTint="#FF9500" />
+    </FrameLayout>
+
+    <!--
+        LAYER 1: COMPACT STUDIO NAVIGATION
+        Üst bar minimalize edildi.
+    -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/focusAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/focusToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            app:contentInsetStart="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="16dp">
+
+                <ImageButton
+                    android:id="@+id/btnBackFromFocus"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bg_ios_button_circle"
+                    android:src="@android:drawable/ic_menu_revert"
+                    android:contentDescription="Exit"
+                    app:tint="#1C1C1E" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="0.15"
+                        android:text="NEURAL ANALYZER"
+                        android:textColor="#8E8E93"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/txtStudioStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="STABLE SYNC"
+                        android:textColor="#34C759"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnRefreshStatus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="#FFFFFF">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:src="@android:drawable/ic_popup_sync"
+                        app:tint="#5856D6" />
+                </com.google.android.material.card.MaterialCardView>
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!--
+        LAYER 2: COMPACT BENTO DASHBOARD (V2)
+        Yükseklik 180dp'den 100dp'ye düşürüldü. Yatay mimariye geçildi.
+    -->
+    <LinearLayout
+        android:id="@+id/compactBento"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintTop_toBottomOf="@id/focusAppBar">
+
+        <!-- Master Chronometer Bento -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardTimerBento"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:layout_marginEnd="8dp"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:strokeWidth="1.5dp"
+            app:strokeColor="#1A000000">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_ios_glass_gradient">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/focusTimerProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:progress="100"
+                    app:indicatorColor="#5856D6"
+                    app:indicatorSize="80dp"
+                    app:trackThickness="10dp"
+                    app:trackColor="#1A5856D6"
+                    app:trackCornerRadius="8dp" />
+
+                <TextView
+                    android:id="@+id/txtFocusTimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="sans-serif-black"
+                    android:text="20"
+                    android:textColor="#1C1C1E"
+                    android:textSize="22sp" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Dynamic Information Bento Stack -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.8"
+            android:orientation="vertical">
+
+            <!-- Stage & Grid Info -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="3dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="16dp">
+                    <TextView
+                        android:id="@+id/txtFocusLevel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="sans-serif-black"
+                        android:text="STAGE 01"
+                        android:textColor="#8E8E93"
+                        android:textSize="10sp" />
+                    <TextView
+                        android:id="@+id/txtTileCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="sans-serif-black"
+                        android:text="3x3"
+                        android:textColor="#1C1C1E"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Streak Performance -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="3dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="sans-serif-black"
+                        android:text="STREAK"
+                        android:textColor="#34C759"
+                        android:textSize="10sp" />
+                    <TextView
+                        android:id="@+id/txtStreak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="sans-serif-black"
+                        android:text="0"
+                        android:textColor="#34C759"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--
+        LAYER 3: NEURAL ARENA (Flexible Core)
+        layout_height="0dp" sayesinde Bento'dan artan tüm alanı buraya ayırır.
+    -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/matrixCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="24dp"
+        app:cardCornerRadius="48dp"
+        app:cardElevation="28dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="#1A000000"
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/compactBento"
+        app:layout_constraintBottom_toTopOf="@id/analyticsContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <GridLayout
+            android:id="@+id/matrixGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="24dp"
+            android:useDefaultMargins="false"
+            android:alignmentMode="alignMargins" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--
+        LAYER 4: ANALYTICS PERFORMANCE DATA
+    -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/analyticsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="26dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="#0D000000"
+        app:layout_constraintBottom_toTopOf="@id/bottomControlPanel">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="24dp">
+
+            <TextView
+                android:id="@+id/txtMainScore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-black"
+                android:text="0"
+                android:textColor="#1C1C1E"
+                android:textSize="32sp" />
+
+            <View
+                android:layout_width="1.5dp"
+                android:layout_height="30dp"
+                android:alpha="0.1"
+                android:background="#1C1C1E"
+                android:layout_marginHorizontal="16dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="ERRORS"
+                    android:textColor="#8E8E93"
+                    android:textSize="9sp" />
+                <TextView
+                    android:id="@+id/txtWrongCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="0"
+                    android:textColor="#FF3B30"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--
+        LAYER 5: CONTROL & GUIDANCE CENTER
+    -->
+    <LinearLayout
+        android:id="@+id/bottomControlPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="42dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/txtFocusInstruction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.1"
+            android:text="READY TO COMMENCE ANALYSIS"
+            android:textColor="#5856D6"
+            android:textSize="11sp"
+            android:layout_marginBottom="16dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStartGame"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginHorizontal="50dp"
+            android:text="INITIALIZE ENGINE"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.05"
+            app:cornerRadius="26dp"
+            app:backgroundTint="#1C1C1E"
+            app:elevation="12dp"
+            app:icon="@android:drawable/ic_media_play"
+            app:iconGravity="textStart"
+            app:iconPadding="12dp"
+            android:stateListAnimator="@null"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Designed by Apple in California"
+            android:textColor="#C7C7CC"
+            android:textSize="10sp"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.1"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

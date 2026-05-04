@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Arka Plan Rengi (Light Orange) -->
+    <solid android:color="#FFEDD5" />
+
+    <!-- Tam yuvarlak (Pill) görünümü için yüksek radius -->
+    <corners android:radius="100dp" />
+</shape>

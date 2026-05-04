@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    iOS Standard Circular Action Button
+    İnce çerçeveli ve tıklandığında hafif parlayan yuvarlak buton yapısı.
+-->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#1A007AFF"> <!-- Tıklama efekti rengi (Hafif Mavi) -->
+
+    <item>
+        <shape android:shape="rectangle">
+            <!-- Arka Plan Rengi: Saf Beyaz -->
+            <solid android:color="#FFFFFF" />
+
+            <!-- Köşe Yuvarlaklığı: Tam yuvarlak olması için yüksek değer -->
+            <corners android:radius="100dp" />
+
+            <!-- Apple Tarzı İnce Çerçeve -->
+            <stroke
+                android:width="1dp"
+                android:color="#E5E5EA" />
+        </shape>
+    </item>
+</ripple>

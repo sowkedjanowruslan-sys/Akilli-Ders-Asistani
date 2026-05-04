@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    =========================================================================================
+    PROJECT: AKILLI DERS ASISTANI - NEURAL ENGINE REPORT
+    VERSION: V8.0 MASTER ARCHITECT
+    DESIGN SYSTEM: NEUTRAL STUDIO (Industrial Precision & Dynamic Glass)
+
+    HIERARCHY:
+    - Layer 0: Mesh Gradient & Atmospheric Diffusion
+    - Layer 1: App Bar Engine (appBarReport)
+    - Layer 2: Adaptive Bento Matrix (Accordion)
+    - Layer 3: Floating Action Controller
+    - Layer 4: Intelligence Shimmer Overlay (loadingOverlay)
+    =========================================================================================
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/reportMainRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC"
+    android:clipChildren="false">
+
+    <!-- ==========================================================
+         LAYER 0: ATMOSPHERIC DEPTH (Arka Plan Sisleri)
+         ========================================================== -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="650dp"
+            android:layout_height="650dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="-250dp"
+            android:layout_marginEnd="-200dp"
+            android:alpha="0.08"
+            android:background="@drawable/bg_neutral_ambient"
+            android:backgroundTint="#4F46E5" />
+
+        <View
+            android:layout_width="550dp"
+            android:layout_height="550dp"
+            android:layout_gravity="bottom|start"
+            android:layout_marginBottom="-180dp"
+            android:layout_marginStart="-120dp"
+            android:alpha="0.06"
+            android:background="@drawable/bg_neutral_ambient"
+            android:backgroundTint="#10B981" />
+    </FrameLayout>
+
+    <!-- ==========================================================
+         LAYER 1: NAVIGATION HUB (appBarReport)
+         ========================================================== -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarReport"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingReport"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:titleEnabled="false">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="32dp"
+                android:paddingBottom="48dp"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.8">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#0F172A"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="4dp"
+                            android:text="NEURAL ANALYTICS"
+                            android:textColor="#FFFFFF"
+                            android:textSize="9sp"
+                            android:fontFamily="sans-serif-black"
+                            android:letterSpacing="0.2" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/txtReportTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="-0.04"
+                        android:lineHeight="44sp"
+                        android:text="Master Analiz\nRaporu"
+                        android:textColor="#0F172A"
+                        android:textSize="42sp" />
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="4dp"
+                        android:layout_marginTop="12dp"
+                        android:background="#4F46E5" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarReport"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:contentInsetStart="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="16dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnBackReport"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_centerVertical="true"
+                        app:cardBackgroundColor="#0D0F172A"
+                        app:cardCornerRadius="22dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#1A0F172A">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_back_ios"
+                            app:tint="#0F172A" />
+                    </com.google.android.material.card.MaterialCardView>
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- ==========================================================
+         LAYER 2: BENTO MATRIX (Accordion Sections)
+         ========================================================== -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingBottom="140dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/accordionContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:animateLayoutChanges="true">
+
+            <!-- UNIT 01: STRATEJİK ÖZET -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/accSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="32dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E2E8F0"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/headerSummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:paddingHorizontal="28dp"
+                        android:gravity="center_vertical"
+                        android:background="?attr/selectableItemBackground">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="📌 Stratejik Özet"
+                            android:textColor="#0F172A"
+                            android:fontFamily="sans-serif-black"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/arrowSummary"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_chevron_right"
+                            android:rotation="90"
+                            app:tint="#94A3B8" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/contentSummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="28dp"
+                        android:paddingBottom="28dp"
+                        android:visibility="visible">
+
+                        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F1F5F9" android:layout_marginBottom="20dp"/>
+
+                        <TextView
+                            android:id="@+id/txtAiSummary"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#334155"
+                            android:textSize="15sp"
+                            android:lineHeight="26sp"
+                            android:fontFamily="sans-serif-medium" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- UNIT 02: KRİTİK ODAK -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/accPredictions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="32dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#BAE6FD"
+                app:cardBackgroundColor="#F0F9FF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/headerPredictions"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:paddingHorizontal="28dp"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🎯 Kritik Odak Noktaları"
+                            android:textColor="#0369A1"
+                            android:fontFamily="sans-serif-black"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/arrowPredictions"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_chevron_right"
+                            app:tint="#0369A1" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/contentPredictions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="28dp"
+                        android:paddingBottom="28dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/txtExamPredictions"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#0F172A"
+                            android:textSize="15sp"
+                            android:fontFamily="sans-serif-bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- UNIT 03: DİKKAT -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/accAlerts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="32dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#FECDD3"
+                app:cardBackgroundColor="#FFF1F2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/headerAlerts"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:paddingHorizontal="28dp"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🚫 Karıştırılmamalı"
+                            android:textColor="#BE123C"
+                            android:fontFamily="sans-serif-black"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/arrowAlerts"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_chevron_right"
+                            app:tint="#BE123C" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/contentAlerts"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="28dp"
+                        android:paddingBottom="28dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/txtNonExamples"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#0F172A"
+                            android:textSize="15sp"
+                            android:fontFamily="sans-serif-bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SIGNATURE -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:gravity="center"
+                android:text="INDUSTRIAL INTELLIGENCE MATRIX © 2024\nNeural Report Version 9.0"
+                android:textColor="#CBD5E1"
+                android:textSize="10sp"
+                android:fontFamily="sans-serif-medium"
+                android:lineSpacingExtra="5dp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ==========================================================
+         LAYER 3: ACTION CONTROLLER (PDF Dışa Aktar)
+         ========================================================== -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/floatingDock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="32dp"
+        app:cardCornerRadius="32dp"
+        app:cardElevation="32dp"
+        app:strokeWidth="1.2dp"
+        app:strokeColor="#FFFFFF"
+        app:cardBackgroundColor="#E60F172A">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnShareReport"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            android:paddingHorizontal="32dp"
+            android:text="PDF DIŞA AKTAR"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.1"
+            app:icon="@android:drawable/ic_menu_save"
+            app:iconTint="#FFFFFF" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- ==========================================================
+         LAYER 4: LOADING ENGINE (Hata giderildi)
+         ========================================================== -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loadingOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FBFBFD"
+        android:elevation="500dp"
+        android:visibility="gone">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/inner_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:indicatorColor="#4F46E5"
+            app:indicatorSize="56dp"
+            app:trackThickness="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="NEURAL ANALİZ MOTORU ÇALIŞIYOR"
+            android:textColor="#0F172A"
+            android:textSize="11sp"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inner_progress" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

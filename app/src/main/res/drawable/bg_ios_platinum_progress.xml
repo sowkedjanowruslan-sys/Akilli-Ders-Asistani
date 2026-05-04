@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Gölge/Derinlik Katmanı -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="4dp" />
+            <gradient
+                android:startColor="#5856D6"
+                android:centerColor="#007AFF"
+                android:endColor="#5AC8FA"
+                android:angle="0" />
+        </shape>
+    </item>
+    <!-- Üst Parlama Katmanı -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="4dp" />
+            <gradient
+                android:startColor="#33FFFFFF"
+                android:centerColor="#00FFFFFF"
+                android:endColor="#33FFFFFF"
+                android:angle="0" />
+        </shape>
+    </item>
+</layer-list>

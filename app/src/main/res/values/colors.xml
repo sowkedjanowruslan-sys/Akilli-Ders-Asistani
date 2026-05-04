@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Standart Renkler -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="primary_variant">#3700B3</color>
+    <color name="secondary">#03DAC6</color>
+    <color name="success">#22C55E</color>
+    <color name="success_container">#DCFCE7</color>
+    <color name="tertiary">#7D5260</color>
+    <color name="tertiary_container">#FFD8E4</color>
+    <color name="on_tertiary_container">#31111D</color>
+    <color name="error_container">#F9DEDC</color>
+    <color name="on_error_container">#410002</color>
+    <color name="outline">#79747E</color>
+    <color name="on_success_container">#064E3B</color>
+    <color name="ios_indigo">#5856D6</color>
+    <color name="online_green">#10B981</color>
+    <color name="offline_red">#EF4444</color>
+    <color name="ios_blue_soft">#E8F2FF</color>
+    <color name="ios_blue_light">#3B82F6</color>
+    <color name="ios_icon_circle_bg">#1A007AFF</color>
+    <color name="switch_thumb_off">#BDBDBD</color>
+    <color name="switch_track_off">#E0E0E0</color>
+    <color name="switch_track_on">#93C5FD</color>
+    <color name="switch_thumb_on">#2563EB</color>
+
+    <!-- Typography & Surfaces -->
+    <color name="ios_text_title">#1C1C1E</color>
+    <color name="ios_text_body">#8E8E93</color>
+    <color name="slate_900">#020617</color>
+    <color name="slate_800">#1E293B</color>
+    <color name="slate_400">#94A3B8</color>
+    <color name="hacker_cyan">#22D3EE</color>
+    <color name="primary">#4F46E5</color>
+    <color name="primary_400">#818CF8</color>
+    <color name="primary_500">#6366F1</color>
+    <color name="primary_600">#4F46E5</color>
+    <color name="primary_container">#EEF2FF</color>
+
+    <!-- Arka Plan ve Yüzey Renkleri -->
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_0">#FFFFFF</color>
+    <color name="surface_1">#F8FAFC</color>
+    <color name="surface_variant">#F1F5F9</color>
+
+    <!-- İçerik Renkleri (Yazı ve İkon) -->
+    <color name="on_surface">#0F172A</color>
+    <color name="on_surface_variant">#64748B</color>
+    <color name="error">#EF4444</color>
+
+    <color name="ios_bg_system">#F2F2F7</color>
+    <color name="ios_bg_white">#FFFFFF</color>
+    <color name="ios_card_white">#FFFFFF</color>
+    <color name="ios_card_pure">#FFFFFF</color>
+    <color name="ios_text_primary">#1C1C1E</color>
+    <color name="ios_text_secondary">#8E8E93</color>
+    <color name="ios_blue">#007AFF</color>
+    <color name="ios_green">#34C759</color>
+    <color name="ios_red">#FF3B30</color>
+    <color name="ios_orange">#FF9500</color>
+    <color name="ios_separator">#E5E5EA</color>
+    <color name="ios_glass_effect">#CCFFFFFF</color>
+    <color name="ns_background">#F2F2F7</color>
+    <color name="ns_surface">#FFFFFF</color>
+    <color name="ns_text_primary">#1C1C1E</color>
+    <color name="ns_text_secondary">#8E8E93</color>
+    <color name="ns_accent">#000000</color>
+    <color name="ns_glass_stroke">#33FFFFFF</color>
+    <color name="ns_gold">#AF9500</color>
+    <color name="ns_bg">#F8F9FA</color>
+    <color name="ns_slate_900">#0F172A</color> <!-- Ana metin ve butonlar -->
+    <color name="ns_slate_700">#334155</color> <!-- İkincil metin -->
+    <color name="ns_slate_200">#E2E8F0</color> <!-- Kenarlıklar -->
+    <color name="ns_accent_indigo">#4F46E5</color> <!-- Sadece vurgu için -->
+    <color name="ns_glass_white">#F2F2F7</color>
+    <color name="progress_glow_color">#335856D6</color>
+
+</resources>

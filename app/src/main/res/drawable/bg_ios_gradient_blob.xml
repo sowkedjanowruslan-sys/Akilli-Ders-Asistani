@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    iOS 17 Soft Background Blur Effect
+    Bu dosya arka plana derinlik katan yumuşak geçişli bir ışık efekti sağlar.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <gradient
+        android:type="radial"
+        android:gradientRadius="450dp"
+        android:startColor="#D1E4FF"
+        android:centerColor="#E2EBFF"
+        android:endColor="#00F2F2F7" />
+    <!--
+        startColor: Merkezin rengi (Açık Mavi)
+        endColor: Şeffaf (Arka plana karışması için başına 00 ekledik)
+    -->
+</shape>
