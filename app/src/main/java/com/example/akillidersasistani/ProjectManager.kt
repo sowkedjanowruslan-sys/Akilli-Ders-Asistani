@@ -104,7 +104,7 @@ class ProjectManager(private val activity: AppCompatActivity, private val db: Da
 
             activity.lifecycleScope.launch(Dispatchers.IO) {
                 try {
-                    val model = GenerativeModel("gemini-2.5-flash", "AIzaSyChToSge2Kx4m8ITBfSwpZb00eG3iCO6Ao")
+                    val model = GenerativeModel("gemini-2.5-flash", "API_KEY")
                     val response = model.generateContent(finalPrompt)
                     withContext(Dispatchers.Main) {
                         edtDesc.setText(response.text)
