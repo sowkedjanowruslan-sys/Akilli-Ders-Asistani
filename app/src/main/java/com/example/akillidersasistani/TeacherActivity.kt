@@ -552,7 +552,7 @@ class TeacherActivity : AppCompatActivity() {
 
         val generativeModel = com.google.ai.client.generativeai.GenerativeModel(
             modelName = "gemini-2.5-flash",
-            apiKey = "AIzaSyC9mjT6nRH1W3pGhaIKKk1-_sOdNlRAQCc"
+            apiKey = "API-KEY"
         )
 
         lifecycleScope.launch {
